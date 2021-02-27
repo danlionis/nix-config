@@ -16,3 +16,6 @@
 [submodule ".config/nvim/pack/test/start/ayu-vim"]
 	path = .config/nvim/pack/test/start/ayu-vim
 	url = https://github.com/ayu-theme/ayu-vim
+[submodule ".config/nvim/pack/test/start/lightline"]
+	path = .config/nvim/pack/test/start/lightline
+	url = https://github.com/itchyny/lightline.vim
