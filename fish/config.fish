@@ -1,6 +1,8 @@
 set PATH $PATH $HOME/.cargo/bin
 set PATH $PATH $HOME/.local/bin
 
+set EDITOR /usr/bin/nvim
+
 # cargo
 abbr -a c cargo
 abbr -a ct cargo test
@@ -20,10 +22,13 @@ end
 abbr -a e "nvim"
 abbr -a vi "nvim"
 abbr -a vim "nvim"
+abbr -a eixt "exit"
 
 abbr -a m "make"
 abbr -a gp "git push"
 
+abbr -a dcup "docker-compose up"
+abbr -a dcdown "docker-compose down"
 
 fzf_key_bindings
 set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
