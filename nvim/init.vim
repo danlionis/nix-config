@@ -1,14 +1,21 @@
+" https://neovim.io/doc/user/vimindex.html
+
 set shell=/bin/bash
 
 let mapleader = "\<Space>"
 
+" To update Plugins run :PlugUpdate
+" https://github.com/junegunn/vim-plug#commands
 call plug#begin()
+
+" source ~/.config/nvim/plugins/copilot.vim
 
 source ~/.config/nvim/plugins/rust.vim
 source ~/.config/nvim/plugins/svelte.vim
 
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/fzf.vim
+
 source ~/.config/nvim/plugins/ayu.vim
 source ~/.config/nvim/plugins/lightline.vim
 source ~/.config/nvim/plugins/fugitive.vim

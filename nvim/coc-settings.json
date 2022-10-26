@@ -2,5 +2,6 @@
     "svelte.enable-ts-plugin": true,
     "python.formatting.autopep8Path": "~/.local/bin/autopep8",
     "yaml.format.enable": true,
-    "rust-analyzer.cargo.allFeatures": true
+    "rust-analyzer.cargo.allFeatures": true,
+    "explorer.file.showHiddenFiles": true
 }
