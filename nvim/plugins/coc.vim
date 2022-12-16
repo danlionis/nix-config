@@ -24,7 +24,7 @@ inoremap <silent><expr> <TAB> coc#pum#visible() ? coc#pum#confirm()
                               \: "\<C-g>u\<CR>\<c-r>=coc#on_enter()\<CR>"
 
 " code action
-nmap <Leader>a :CocAction<cr>
+nmap <Leader>a <Plug>(coc-codeaction-line)
 
 " format
 command! -nargs=0 Format :call CocAction('format')
@@ -54,8 +54,6 @@ endfunction
 
 " Highlight the symbol and its references when holding the cursor.
 autocmd CursorHold * silent call CocActionAsync('highlight')
-
-nmap <leader>e <Cmd>CocCommand explorer<CR>
 
 " Use <c-space> to trigger completion.
 if has('nvim')

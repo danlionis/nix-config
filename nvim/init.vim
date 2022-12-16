@@ -1,5 +1,11 @@
 " https://neovim.io/doc/user/vimindex.html
 
+" tab settings
+set tabstop=4
+set softtabstop=4
+set shiftwidth=4
+set expandtab
+
 set shell=/bin/bash
 
 let mapleader = "\<Space>"
@@ -15,12 +21,15 @@ source ~/.config/nvim/plugins/svelte.vim
 
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/fzf.vim
+source ~/.config/nvim/plugins/nerdtree.vim
 
 source ~/.config/nvim/plugins/ayu.vim
 source ~/.config/nvim/plugins/lightline.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/bufferline.vim
+
+source ~/.config/nvim/plugins/editorconfig.vim
 
 call plug#end()
 
@@ -48,12 +57,6 @@ set noshowmode
 set mouse=a
 set ignorecase
 set nowrap
-
-" tab settings
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
-set expandtab
 
 set hidden
 set splitbelow
