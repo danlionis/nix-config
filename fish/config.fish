@@ -24,6 +24,7 @@ abbr -a vi "nvim"
 abbr -a vim "nvim"
 abbr -a eixt "exit"
 
+abbr -a cat "bat"
 abbr -a m "make"
 abbr -a gp "git push"
 

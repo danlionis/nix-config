@@ -2,6 +2,7 @@
 # VERSION: 3.0
 SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_c:cargo
+SETUVAR _fish_abbr_cat:bat
 SETUVAR _fish_abbr_ct:cargo\x20test
 SETUVAR _fish_abbr_dcdown:docker\x2dcompose\x20down
 SETUVAR _fish_abbr_dcup:docker\x2dcompose\x20up
