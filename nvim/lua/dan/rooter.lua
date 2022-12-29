@@ -22,7 +22,6 @@ local set_root = function()
   end
 
   -- Set current directory
-  print(root)
   vim.fn.chdir(root)
 end
 
