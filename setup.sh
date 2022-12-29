@@ -1,8 +1,11 @@
 #!/bin/bash
 
-pwd=$(pwd)
+rm ~/.config/nvim
+rm ~/.config/fish
+rm ~/.config/kitty
+rm ~/.config/starship.toml
 
-ln -fs $pwd/nvim ~/.config/nvim
-ln -fs $pwd/fish ~/.config/fish
-ln -fs $pwd/kitty ~/.config/kitty
-ln -fs $pwd/starship.toml ~/.config/starship.toml
+ln -fs $PWD/nvim ~/.config/nvim
+ln -fs $PWD/fish ~/.config/fish
+ln -fs $PWD/kitty ~/.config/kitty
+ln -fs $PWD/starship.toml ~/.config/starship.toml

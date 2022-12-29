@@ -1,1 +1,0 @@
-Plug 'akinsho/bufferline.nvim'
