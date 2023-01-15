@@ -1,11 +1,13 @@
 return {
     {
         "folke/tokyonight.nvim",
+        lazy = true,
         opts = { style = "moon" },
     },
 
     {
         'rose-pine/neovim',
+        lazy = true,
         as = 'rose-pine',
         -- config = function()
         --     vim.cmd('colorscheme rose-pine')

@@ -7,10 +7,15 @@ return {
         }
     },
 
-    'tpope/vim-rhubarb',
+    -- open github urls
+    {
+        'tpope/vim-rhubarb',
+        cmd = "GBrowse",
+    },
 
     {
         'lewis6991/gitsigns.nvim',
+        event = "BufReadPre",
         opts = {
             signs = {
                 add = { text = '+' },
