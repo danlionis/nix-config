@@ -74,6 +74,9 @@ return {
             on_attach(function(client, buffer)
                 require("plugins.lsp.format").on_attach(client, buffer)
                 require("plugins.lsp.keymaps").on_attach(client, buffer)
+                if client.server_capabilities.documentSymbolProvider then
+                    require("nvim-navic").attach(client, buffer)
+                end
             end)
 
             vim.diagnostic.config(opts.diagnostics)
