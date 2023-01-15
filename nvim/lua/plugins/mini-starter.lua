@@ -29,9 +29,16 @@ return {
         header = logo,
         items = {
           new_section("Find file", "Telescope find_files", "Telescope"),
+          new_section("Git files", "Telescope git_files", "Telescope"),
           new_section("Recent files", "Telescope oldfiles", "Telescope"),
-          new_section("Grep text", "Telescope live_grep", "Telescope"),
-          new_section("init.lua", "e $MYVIMRC", "Config"),
+          new_section("Text search", "Telescope live_grep", "Telescope"),
+          new_section("init.lua", function()
+            -- change directory to the nvim config and open init.lua 
+            local vimrc = vim.fn.expand("$MYVIMRC")
+            local cwd = vim.fn.fnamemodify(vimrc, ":p:h")
+            vim.cmd.cd(cwd)
+            vim.cmd.edit(vimrc)
+          end, "Config"),
           new_section("Lazy", "Lazy", "Config"),
           new_section("New file", "ene | startinsert", "Built-in"),
           new_section("Quit", "qa", "Built-in"),

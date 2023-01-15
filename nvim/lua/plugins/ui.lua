@@ -53,6 +53,7 @@ return {
     -- better vim.notify
     {
         "rcarriga/nvim-notify",
+        enabled = false,
         keys = {
             {
                 "<leader>un",
@@ -76,7 +77,7 @@ return {
     -- better vim.ui
     {
         "stevearc/dressing.nvim",
-
+        event = "VeryLazy",
         init = function()
             ---@diagnostic disable-next-line: duplicate-set-field
             vim.ui.select = function(...)

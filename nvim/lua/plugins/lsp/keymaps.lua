@@ -5,6 +5,7 @@ function M.on_attach(client, buffer)
 
   self:map("<leader>cd", vim.diagnostic.open_float, { desc = "Line Diagnostics" })
   self:map("<leader>ca", vim.lsp.buf.code_action, { desc = "Code Action", mode = { "n", "v" }, has = "codeAction" })
+  self:map("<C-.>", vim.lsp.buf.code_action, { desc = "Code Action", mode = { "n", "v" }, has = "codeAction" })
 
   -- self:map("<leader>cl", "LspInfo", { desc = "Lsp Info" })
   self:map("<leader>xd", "Telescope diagnostics", { desc = "Telescope Diagnostics" })

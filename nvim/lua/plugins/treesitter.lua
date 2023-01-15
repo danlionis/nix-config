@@ -30,6 +30,9 @@ return {
         "vim",
         "yaml",
       },
+      playground = {
+        enable = true,
+      }
     },
     ---@param opts TSConfig
     config = function(_, opts)
@@ -39,4 +42,9 @@ return {
       require("nvim-treesitter.configs").setup(opts)
     end,
   },
+
+  {
+    "nvim-treesitter/playground",
+    cmd = "TSPlaygroundToggle",
+  }
 }

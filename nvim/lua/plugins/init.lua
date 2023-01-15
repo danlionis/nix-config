@@ -1,13 +1,6 @@
 return {
-    -- Detect tabstop and shiftwidth automatically
-    {
-        'tpope/vim-sleuth',
-        event = "BufReadPre",
-    },
-
     {
         'mbbill/undotree',
-        event = "BufReadPost",
         keys = {
             { "<leader>u", vim.cmd.UndotreeToggle, { desc = "Open [u]ndotree" } }
         }
@@ -27,7 +20,7 @@ return {
             { "<leader>xt", "<cmd>TodoTrouble<cr>", desc = "Todo Trouble" },
             { "<leader>xtt", "<cmd>TodoTrouble keywords=TODO,FIX,FIXME<cr>", desc = "Todo Trouble" },
             { "<leader>xT", "<cmd>TodoTelescope<cr>", desc = "Todo Telescope" },
-            { "<leader>st", "<cmd>TodoTelescope<cr>", desc = "[S]earch [T]odos" },
+            { "<leader>st", "<cmd>TodoTelescope keywords=TODO,FIX,FIXME<cr>", desc = "[S]earch [T]odos" },
         },
     },
 
