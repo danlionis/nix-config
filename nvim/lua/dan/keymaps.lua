@@ -34,6 +34,8 @@ vim.keymap.set("v", "<A-j>", ":m '>+1<cr>gv=gv", { desc = "Move down" })
 vim.keymap.set("n", "<A-k>", ":m .-2<cr>==", { desc = "Move up" })
 vim.keymap.set("v", "<A-k>", ":m '<-2<cr>gv=gv", { desc = "Move up" })
 -- vim.keymap.set("i", "<A-k>", "<Esc>:m .-2<cr>==gi", { desc = "Move up" })
+vim.keymap.set("v", "<A-l>", ">gv", { desc = "Indent" })
+vim.keymap.set("v", "<A-h>", "<gv", { desc = "De-Indent" })
 
 vim.keymap.set("n", "x", '"_x') -- dont copy to register
 
@@ -80,4 +82,4 @@ vim.keymap.set("n", "<left>", ":tabp<CR>", { silent = true, desc = "Previous Tab
 
 
 -- open netrw
-vim.keymap.set("n", "<leader>e", vim.cmd.Lexplore, { desc = "Open file browser"})
+vim.keymap.set("n", "<leader>e", vim.cmd.Lexplore, { desc = "Open file browser" })

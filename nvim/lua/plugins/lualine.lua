@@ -68,6 +68,7 @@ return {
     -- lsp symbol navigation for lualine
     {
         "SmiteshP/nvim-navic",
+        event = "BufReadPost",
         opts = { separator = " ", highlight = true, depth_limit = 5 },
         depencendies = {
             "neovim/nvim-lspconfig"
