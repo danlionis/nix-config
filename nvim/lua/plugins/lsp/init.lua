@@ -14,7 +14,8 @@ return {
     --     'j-hui/fidget.nvim',
     --     config = true
     -- },
-    { -- LSP Configuration & Plugins
+    {
+        -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
         event = "BufReadPre",
         dependencies = {
@@ -27,12 +28,29 @@ return {
         },
         opts = {
             servers = {
+                efm = {
+                    init_options = { documentFormatting = true },
+                    settings = {
+                        languages = {
+                            python = {
+                                {
+                                    formatCommand = "black --fast -",
+                                    formatStdin = true,
+                                }
+                            }
+                        },
+                    },
+                    filetypes = {
+                        "python"
+                    }
+                },
                 clangd = {},
                 pyright = {},
                 tsserver = {},
                 texlab = {},
                 gopls = {},
-                sumneko_lua = {
+                svelte = {},
+                lua_ls = {
                     settings = {
                         Lua = {
                             runtime = {
