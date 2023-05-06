@@ -24,6 +24,13 @@ return {
         },
     },
 
+    {
+        "lervag/vimtex",
+        config = function()
+            vim.g.vimtex_view_method = "zathura"
+        end
+    }
+
     --[[ -- better diagnostics list and others
     -- NOTE: maybe we can remove this, does not seem too useful
     {
