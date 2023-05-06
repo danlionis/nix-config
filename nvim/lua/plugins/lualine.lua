@@ -1,3 +1,34 @@
+local colors = {
+	red = '#cdd6f4',
+	grey = '#181825',
+	black = '#1e1e2e',
+	white = '#313244',
+	light_green = '#6c7086',
+	orange = '#fab387',
+	green = '#a6e3a1',
+	blue = '#80A7EA',
+}
+
+local theme = {
+	normal = {
+		a = { fg = colors.black, bg = colors.blue },
+		b = { fg = colors.blue, bg = colors.white },
+		c = { fg = colors.white, bg = colors.black },
+		z = { fg = colors.white, bg = colors.black },
+	},
+	insert = { a = { fg = colors.black, bg = colors.orange } },
+	visual = { a = { fg = colors.black, bg = colors.green } },
+	replace = { a = { fg = colors.black, bg = colors.green } },
+}
+
+local mode = { "mode", --[[ separator = { right = '', left = '' } ,]] right_padding = 2 }
+
+local space = {
+    function()
+        return " "
+    end
+}
+
 return {
     {
         'nvim-lualine/lualine.nvim',
@@ -15,13 +46,19 @@ return {
             return {
                 options = {
                     theme = "auto",
+                    -- theme = theme,
                     -- icons_enabled = false,
                     globalstatus = true,
                     disabled_filetypes = { statusline = { "dashboard", "lazy", "alpha" } },
+                    -- component_separators = { left = '', right = '' },
+                    -- section_separators = { left = '', right = '' },
+
                 },
                 sections = {
-                    lualine_a = { "mode" },
-                    lualine_b = { "branch" },
+                    lualine_a = {
+                        mode
+                    },
+                    lualine_b = { "branch", "diff" },
                     lualine_c = {
                         { "diagnostics", },
                         { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
