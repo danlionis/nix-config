@@ -1,17 +1,19 @@
-set PATH $PATH $HOME/.cargo/bin
-set PATH $PATH $HOME/.local/bin
-
-set EDITOR /usr/bin/nvim
+set -gx EDITOR /usr/bin/nvim
 
 fzf_key_bindings
-set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
-set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
+set -gx FZF_DEFAULT_OPTS "--height 40%"
+set -gx FZF_CTRL_T_OPTS "--border --preview 'bat --color=always {}'"
+set -gx FZF_CTRL_R_OPTS "--border"
 
-# autojump
-if test -f /home/dan/.from_src/autojump-rs/integrations/autojump.fish;
-    source /home/dan/.from_src/autojump-rs/integrations/autojump.fish;
-end
+# set -gx FZF_DEFAULT_COMMAND 'fd --type f --hidden --follow --exclude .git'
+# set -gx FZF_CTRL_T_COMMAND $FZF_DEFAULT_COMMAND
 
 source /home/dan/.config/fish/fish_greeting.fish
 
-starship init fish | source
+if type -q starship
+    starship init fish | source
+end
+
+if type -q zoxide
+    zoxide init fish | source
+end
