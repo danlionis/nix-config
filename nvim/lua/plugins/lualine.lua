@@ -1,24 +1,24 @@
 local colors = {
-	red = '#cdd6f4',
-	grey = '#181825',
-	black = '#1e1e2e',
-	white = '#313244',
-	light_green = '#6c7086',
-	orange = '#fab387',
-	green = '#a6e3a1',
-	blue = '#80A7EA',
+    red = '#cdd6f4',
+    grey = '#181825',
+    black = '#1e1e2e',
+    white = '#313244',
+    light_green = '#6c7086',
+    orange = '#fab387',
+    green = '#a6e3a1',
+    blue = '#80A7EA',
 }
 
 local theme = {
-	normal = {
-		a = { fg = colors.black, bg = colors.blue },
-		b = { fg = colors.blue, bg = colors.white },
-		c = { fg = colors.white, bg = colors.black },
-		z = { fg = colors.white, bg = colors.black },
-	},
-	insert = { a = { fg = colors.black, bg = colors.orange } },
-	visual = { a = { fg = colors.black, bg = colors.green } },
-	replace = { a = { fg = colors.black, bg = colors.green } },
+    normal = {
+        a = { fg = colors.black, bg = colors.blue },
+        b = { fg = colors.blue, bg = colors.white },
+        c = { fg = colors.white, bg = colors.black },
+        z = { fg = colors.white, bg = colors.black },
+    },
+    insert = { a = { fg = colors.black, bg = colors.orange } },
+    visual = { a = { fg = colors.black, bg = colors.green } },
+    replace = { a = { fg = colors.black, bg = colors.green } },
 }
 
 local mode = { "mode", --[[ separator = { right = '', left = '' } ,]] right_padding = 2 }
@@ -34,7 +34,6 @@ return {
         'nvim-lualine/lualine.nvim',
         event = "VeryLazy",
         opts = function()
-
             local function fg(name)
                 return function()
                     ---@type {foreground?:number}?
@@ -61,12 +60,21 @@ return {
                     lualine_b = { "branch", "diff" },
                     lualine_c = {
                         { "diagnostics", },
-                        { "filetype", icon_only = true, separator = "", padding = { left = 1, right = 0 } },
-                        { "filename", path = 1, symbols = { modified = "*", readonly = "", unnamed = "" } },
+                        {
+                            "filetype",
+                            icon_only = true,
+                            separator = "",
+                            padding = {
+                                left = 1,
+                                right = 0
+                            }
+                        },
+                        { "filename",    path = 1, symbols = { modified = "*", readonly = "", unnamed = "" } },
                         -- stylua: ignore
                         {
                             require("nvim-navic").get_location, cond = require("nvim-navic").is_available
                         },
+                        { "buffers" },
                     },
                     lualine_x = {
                         -- stylua: ignore
@@ -81,12 +89,15 @@ return {
                         --     cond = function() return package.loaded["noice"] and require("noice").api.status.mode.has() end,
                         --     color = fg("Constant"),
                         -- },
-                        { require("lazy.status").updates, cond = require("lazy.status").has_updates,
-                            color = fg("Special") },
+                        {
+                            require("lazy.status").updates,
+                            cond = require("lazy.status").has_updates,
+                            color = fg("Special")
+                        },
                         { "diff", },
                     },
                     lualine_y = {
-                        { "progress", separator = "", padding = { left = 1, right = 0 } },
+                        { "progress", separator = "",                   padding = { left = 1, right = 0 } },
                         { "location", padding = { left = 0, right = 1 } },
                     },
                     lualine_z = {

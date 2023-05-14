@@ -28,6 +28,13 @@ return {
         },
         opts = {
             servers = {
+                ltex = {
+                    settings = {
+                        dictionary = {
+                            en = { "QUIC" },
+                        }
+                    }
+                },
                 efm = {
                     init_options = { documentFormatting = true },
                     settings = {
@@ -48,7 +55,10 @@ return {
                 pyright = {},
                 tsserver = {},
                 texlab = {},
-                gopls = {},
+                gopls = {
+                    completeUnimported = true,
+                    usePlaceholders = true,
+                },
                 svelte = {},
                 lua_ls = {
                     settings = {
