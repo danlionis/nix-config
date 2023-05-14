@@ -37,3 +37,5 @@ abbr -a 2fa "ykman oath accounts code"
 
 alias pandoc 'docker run --rm -v "$(pwd):/data" -u $(id -u):$(id -g) pandoc/latex'
 alias latexmk 'docker run --rm --workdir /data -v "$(pwd):/data" -u $(id -u):$(id -g) texlive/texlive latexmk'
+alias bashly 'docker run --rm -it --user $(id -u):$(id -g) --volume "$PWD:/app" dannyben/bashly'
+
