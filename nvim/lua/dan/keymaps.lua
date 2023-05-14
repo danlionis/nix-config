@@ -71,8 +71,10 @@ vim.keymap.set("n", "<leader>to", ":tabnew<CR>", { silent = true, desc = "Open n
 vim.keymap.set("n", "<leader>tx", ":tabclose<CR>", { silent = true, desc = "Close Tab" })
 vim.keymap.set("n", "<leader>tn", ":tabn<CR>", { silent = true, desc = "Next Tab" })
 vim.keymap.set("n", "<leader>tp", ":tabp<CR>", { silent = true, desc = "Previous Tab" })
-vim.keymap.set("n", "<right>", ":tabn<CR>", { silent = true, desc = "Next Tab" })
-vim.keymap.set("n", "<left>", ":tabp<CR>", { silent = true, desc = "Previous Tab" })
+
+-- buffers
+vim.keymap.set("n", "<right>", ":bn<CR>", { silent = true, desc = "Next Buffer" })
+vim.keymap.set("n", "<left>", ":bp<CR>", { silent = true, desc = "Previous Buffer" })
 
 -- -- Diagnostic keymaps
 -- vim.keymap.set('n', '[d', vim.diagnostic.goto_prev)
