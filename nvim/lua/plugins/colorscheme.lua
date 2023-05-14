@@ -1,19 +1,30 @@
 return {
     {
-        "folke/tokyonight.nvim",
-        lazy = false,
-        priority = 1000,
+        "catppuccin/nvim",
+        name = "catppuccin",
         opts = {
-            style = "night",
-            transparent = true,
+            -- transparent_background = true
         },
         config = function(_, opts)
-            require("tokyonight").setup(opts)
-            vim.cmd.colorscheme("tokyonight")
+            require("catppuccin").setup(opts)
+            vim.cmd.colorscheme("catppuccin")
         end
-    },
-    {
-        'ayu-theme/ayu-vim',
-        lazy = true
-    },
+    }
+    -- {
+    --     "folke/tokyonight.nvim",
+    --     lazy = false,
+    --     priority = 1000,
+    --     opts = {
+    --         style = "night",
+    --         transparent = true,
+    --     },
+    --     config = function(_, opts)
+    --         require("tokyonight").setup(opts)
+    --         vim.cmd.colorscheme("tokyonight")
+    --     end
+    -- },
+    -- {
+    --     'ayu-theme/ayu-vim',
+    --     lazy = true
+    -- },
 }
