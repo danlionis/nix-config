@@ -1,26 +1,32 @@
 return {
     {
+        "nvim-tree/nvim-web-devicons"
+    },
+    {
         'numToStr/Comment.nvim',
         event = "VeryLazy",
         config = true
     }, -- "gc" to comment visual regions/lines
-
     -- noicer ui
     {
         "folke/noice.nvim",
         dependencies = {
-            "MunifTanjim/nui.nvim"
+            "MunifTanjim/nui.nvim",
+            "rcarriga/nvim-notify",
         },
         event = "VeryLazy",
         opts = {
             cmdline = {
-                view = "cmdline",
+                -- view = "cmdline_popup",
                 format = {
                     cmdline = { icon = ">" },
                     search_down = { icon = "/" },
                     help = { icon = "?" },
-                    lua = { icon = "lua:" },
+                    -- lua = { icon = "lua:" },
                 }
+            },
+            messages = {
+                enabled = true,
             },
             lsp = {
                 override = {
@@ -28,32 +34,47 @@ return {
                     ["vim.lsp.util.stylize_markdown"] = true,
                 },
             },
-            popupmenu = { enabled = false },
+            -- popupmenu = { enabled = false },
             presets = {
-                bottom_search = true,
-                command_palette = false,
+                -- bottom_search = true,
+                command_palette = true,
                 long_message_to_split = true,
                 inc_rename = false,
+                lsp_doc_border = true,
             },
         },
         -- stylua: ignore
         keys = {
-            { "<S-Enter>", function() require("noice").redirect(vim.fn.getcmdline()) end, mode = "c",
-                desc = "Redirect Cmdline" },
-            { "<leader>snl", function() require("noice").cmd("last") end, desc = "Noice Last Message" },
+            {
+                "<S-Enter>",
+                function() require("noice").redirect(vim.fn.getcmdline()) end,
+                mode = "c",
+                desc = "Redirect Cmdline"
+            },
+            { "<leader>snl", function() require("noice").cmd("last") end,    desc = "Noice Last Message" },
             { "<leader>snh", function() require("noice").cmd("history") end, desc = "Noice History" },
-            { "<leader>sna", function() require("noice").cmd("all") end, desc = "Noice All" },
-            { "<c-f>", function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end, silent = true,
-                expr = true, desc = "Scroll forward" },
-            { "<c-b>", function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end, silent = true,
-                expr = true, desc = "Scroll backward" },
+            { "<leader>sna", function() require("noice").cmd("all") end,     desc = "Noice All" },
+            {
+                "<c-f>",
+                function() if not require("noice.lsp").scroll(4) then return "<c-f>" end end,
+                silent = true,
+                expr = true,
+                desc = "Scroll forward"
+            },
+            {
+                "<c-b>",
+                function() if not require("noice.lsp").scroll(-4) then return "<c-b>" end end,
+                silent = true,
+                expr = true,
+                desc = "Scroll backward"
+            },
         },
     },
 
     -- better vim.notify
     {
         "rcarriga/nvim-notify",
-        enabled = false,
+        enabled = true,
         keys = {
             {
                 "<leader>un",
@@ -101,6 +122,25 @@ return {
             show_trailing_blankline_indent = false,
         }
     },
+
+    {
+        "folke/zen-mode.nvim",
+        opts = {
+            window = {
+                options = {
+                    number = false,
+                    relativenumber = false
+                }
+            },
+            plugins = {
+                gitsigns = { enabled = true }
+            }
+            -- your configuration comes here
+            -- or leave it empty to use the default settings
+            -- refer to the configuration section below
+        }
+    }
+
 
     -- -- active indent guide and indent text objects
     -- {

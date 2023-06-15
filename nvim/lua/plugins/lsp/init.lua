@@ -30,8 +30,10 @@ return {
             servers = {
                 ltex = {
                     settings = {
-                        dictionary = {
-                            en = { "QUIC" },
+                        ltex = {
+                            dictionary = {
+                                ["en-US"] = { "QUIC", ":~/ltexdict.txt" },
+                            }
                         }
                     }
                 },

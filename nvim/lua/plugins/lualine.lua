@@ -49,7 +49,7 @@ return {
                     -- icons_enabled = false,
                     globalstatus = true,
                     disabled_filetypes = { statusline = { "dashboard", "lazy", "alpha" } },
-                    -- component_separators = { left = '', right = '' },
+                    component_separators = { left = '', right = '' },
                     -- section_separators = { left = '', right = '' },
 
                 },
@@ -74,7 +74,7 @@ return {
                         {
                             require("nvim-navic").get_location, cond = require("nvim-navic").is_available
                         },
-                        { "buffers" },
+                        -- { "buffers" },
                     },
                     lualine_x = {
                         -- stylua: ignore
