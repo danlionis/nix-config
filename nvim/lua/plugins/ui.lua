@@ -10,6 +10,7 @@ return {
     -- noicer ui
     {
         "folke/noice.nvim",
+        enabled = false,
         dependencies = {
             "MunifTanjim/nui.nvim",
             "rcarriga/nvim-notify",
@@ -17,7 +18,7 @@ return {
         event = "VeryLazy",
         opts = {
             cmdline = {
-                -- view = "cmdline_popup",
+                view = "cmdline_popup",
                 format = {
                     cmdline = { icon = ">" },
                     search_down = { icon = "/" },
@@ -93,6 +94,10 @@ return {
                 return math.floor(vim.o.columns * 0.50)
             end,
         },
+        config = function(_, opts)
+            vim.notify = require("notify")
+            require("notify").setup(opts)
+        end
     },
 
     -- better vim.ui
@@ -139,27 +144,44 @@ return {
             -- or leave it empty to use the default settings
             -- refer to the configuration section below
         }
+    },
+
+    -- active indent guide and indent text objects
+    {
+        "echasnovski/mini.indentscope",
+        version = false, -- wait till new 0.7.0 release to put it back on semver
+        event = "BufReadPre",
+        opts = {
+            symbol = "│",
+        },
+        config = function(_, opts)
+            vim.api.nvim_create_autocmd("FileType", {
+                pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
+                callback = function()
+                    vim.b.miniindentscope_disable = true
+                end,
+            })
+            require("mini.indentscope").setup(opts)
+        end,
+    },
+    {
+        "ThePrimeagen/harpoon",
+        dependencies = {
+            "nvim-lua/plenary.nvim"
+        },
+        keys = {
+            { "<leader>a", function() require("harpoon.mark").add_file() end, desc = "Harpoon Mark File", mode = "n" },
+            { "<leader>ht", function() require("harpoon.ui").toggle_quick_menu() end, desc = "[H]arpoon [T]oggle Menu", mode = "n" },
+            { "<C-1>", function() require("harpoon.ui").nav_file(1) end, desc = "Harpoon 1", mode = "n" },
+            { "<C-2>", function() require("harpoon.ui").nav_file(2) end, desc = "Harpoon 2", mode = "n" },
+            { "<C-3>", function() require("harpoon.ui").nav_file(3) end, desc = "Harpoon 3", mode = "n" },
+            { "<C-4>", function() require("harpoon.ui").nav_file(4) end, desc = "Harpoon 4", mode = "n" },
+        },
+        config = function(_, opts)
+            local harpoon = require("harpoon")
+            harpoon.setup(opts)
+            require("telescope").load_extension("harpoon")
+        end
     }
 
-
-    -- -- active indent guide and indent text objects
-    -- {
-    --     "echasnovski/mini.indentscope",
-    --     version = false, -- wait till new 0.7.0 release to put it back on semver
-    --     event = "BufReadPre",
-    --     opts = {
-    --         -- symbol = "▏",
-    --         symbol = "│",
-    --         options = { try_as_border = true },
-    --     },
-    --     config = function(_, opts)
-    --         vim.api.nvim_create_autocmd("FileType", {
-    --             pattern = { "help", "alpha", "dashboard", "neo-tree", "Trouble", "lazy", "mason" },
-    --             callback = function()
-    --                 vim.b.miniindentscope_disable = true
-    --             end,
-    --         })
-    --         require("mini.indentscope").setup(opts)
-    --     end,
-    -- },
 }

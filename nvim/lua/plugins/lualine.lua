@@ -94,7 +94,7 @@ return {
                             cond = require("lazy.status").has_updates,
                             color = fg("Special")
                         },
-                        { "diff", },
+                        -- { "diff", },
                     },
                     lualine_y = {
                         { "progress", separator = "",                   padding = { left = 1, right = 0 } },

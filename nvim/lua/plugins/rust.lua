@@ -13,6 +13,9 @@ return {
                     end, { buffer = bufnr })
                 end
             },
+            hover_actions = {
+                auto_focus = true
+            }
         },
         config = function(_, opts)
             local mason_registry = require("mason-registry")
@@ -26,6 +29,23 @@ return {
             }
 
             require("rust-tools").setup(opts)
+        end
+    },
+    {
+        'saecki/crates.nvim',
+        event = "BufRead Cargo.toml",
+        tag = 'v0.3.0',
+        dependencies = { 'nvim-lua/plenary.nvim' },
+        opts = {
+            null_ls = {
+                enabled = true,
+                name = "crates.nvim"
+            }
+        },
+        config = function(_, opts)
+            local crates = require("crates")
+            crates.setup(opts)
+            crates.show()
         end
     }
 }

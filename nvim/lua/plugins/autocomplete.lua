@@ -34,6 +34,7 @@ return {
                     { name = "luasnip" },
                     { name = "buffer" },
                     { name = "path" },
+                    { name = "crates" },
                 }),
                 -- formatting = {
                 --     format = function(_, item)

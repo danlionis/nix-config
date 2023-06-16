@@ -15,7 +15,7 @@ return {
                 "<leader>B",
                 function() require("dap").set_breakpoint(vim.fn.input("[Condition] > ")) end,
                 desc =
-                "[B]reakpoint [T]oggle"
+                "[B]reakpoint [T]oggle Conditional"
             },
             {
                 "<leader>dr",
@@ -87,6 +87,17 @@ return {
             dap.listeners.before.event_exited["dapui_config"] = function()
                 dapui.close()
             end
+
+            vim.fn.sign_define("DapBreakpoint",
+                { text = "🔴", texthl = "DapBreakpoint", linehl = "DapBreakpoint", numhl = "DapBreakpoint" })
+            vim.fn.sign_define("DapBreakpointCondition",
+                {
+                    text = "🟠",
+                    texthl = "DapBreakpointCondition",
+                    linehl = "DapBreakpointCondition",
+                    numhl = "DapBreakpointCondition"
+                })
+            -- vim.fn.sign_define("DapBreakpointCondition", { text = "" })
         end
     },
     {

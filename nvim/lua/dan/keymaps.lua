@@ -85,3 +85,11 @@ vim.keymap.set("n", "<left>", ":bp<CR>", { silent = true, desc = "Previous Buffe
 
 -- open netrw
 -- vim.keymap.set("n", "<leader>e", vim.cmd.Lexplore, { desc = "Open file browser" })
+
+vim.keymap.set("i", "<C-k>", "<Up>", { silent = true, desc = "Move up" })
+vim.keymap.set("i", "<C-j>", "<Down>", { silent = true, desc = "Move down" })
+vim.keymap.set("i", "<C-h>", "<Left>", { silent = true, desc = "Move left" })
+vim.keymap.set("i", "<C-l>", "<Right>", { silent = true, desc = "Move right" })
+
+vim.keymap.set("i", "<C-b>", "<ESC>^i", { silent = true, desc = "Beginning of line" })
+vim.keymap.set("i", "<C-e>", "<End>", { silent = true, desc = "End of line" })

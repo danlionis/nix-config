@@ -37,22 +37,22 @@ return {
                         }
                     }
                 },
-                efm = {
-                    init_options = { documentFormatting = true },
-                    settings = {
-                        languages = {
-                            python = {
-                                {
-                                    formatCommand = "black --fast -",
-                                    formatStdin = true,
-                                }
-                            }
-                        },
-                    },
-                    filetypes = {
-                        "python"
-                    }
-                },
+                -- efm = {
+                --     init_options = { documentFormatting = true },
+                --     settings = {
+                --         languages = {
+                --             python = {
+                --                 {
+                --                     formatCommand = "black --fast -",
+                --                     formatStdin = true,
+                --                 }
+                --             }
+                --         },
+                --     },
+                --     filetypes = {
+                --         "python"
+                --     }
+                -- },
                 clangd = {},
                 pyright = {},
                 tsserver = {},
@@ -134,14 +134,4 @@ return {
             })
         end
     },
-
-    {
-        'williamboman/mason.nvim',
-        cmd  = "Mason",
-        opts = { ensure_installed = {} },
-        -- config = function(_, opts)
-        --     require("mason").setup(opts)
-        -- Vkkk
-
-    }
 }
