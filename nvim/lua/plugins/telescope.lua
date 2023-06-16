@@ -14,6 +14,7 @@ return {
         branch = '0.1.x',
         dependencies = {
             'nvim-lua/plenary.nvim',
+            'nvim-telescope/telescope-dap.nvim',
             -- Fuzzy Finder Algorithm which dependencies local dependencies to be built. Only load if `make` is available
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
         },
@@ -128,6 +129,21 @@ return {
 
             -- Enable telescope fzf native, if installed
             pcall(require('telescope').load_extension, 'fzf')
+            require('telescope').load_extension('dap')
         end,
     },
+    {
+        "nvim-telescope/telescope-file-browser.nvim",
+        dependencies = { "nvim-telescope/telescope.nvim", "nvim-lua/plenary.nvim" },
+        keys = {
+            {
+                '<leader>e',
+                function() require("telescope").extensions.file_browser.file_browser() end,
+                desc = 'Search git files'
+            },
+        },
+        config = function(_, opts)
+            require("telescope").load_extension("file_browser")
+        end
+    }
 }

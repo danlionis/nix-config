@@ -88,14 +88,15 @@ return {
                         },
                     },
                 },
-                rust_analyzer = {
-                    settings = {
-                        ["rust-analyzer"] = {
-                            procMacro = { enable = true },
-                            cargo = { features = "all" }
-                        }
-                    }
-                }
+                -- -- use rust-tools instead
+                -- rust_analyzer = {
+                --     settings = {
+                --         ["rust-analyzer"] = {
+                --             procMacro = { enable = true },
+                --             cargo = { features = "all" }
+                --         }
+                --     }
+                -- }
             },
             setup = {}
         },

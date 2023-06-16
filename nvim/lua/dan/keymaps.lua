@@ -84,4 +84,4 @@ vim.keymap.set("n", "<left>", ":bp<CR>", { silent = true, desc = "Previous Buffe
 
 
 -- open netrw
-vim.keymap.set("n", "<leader>e", vim.cmd.Lexplore, { desc = "Open file browser" })
+-- vim.keymap.set("n", "<leader>e", vim.cmd.Lexplore, { desc = "Open file browser" })

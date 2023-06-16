@@ -16,7 +16,7 @@ return {
                 'rust',
                 'javascript',
                 'typescript',
-                'help',
+                'vimdoc',
                 'fish',
                 "bash",
                 "html",
