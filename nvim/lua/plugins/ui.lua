@@ -1,10 +1,11 @@
 return {
     {
-        "nvim-tree/nvim-web-devicons"
+        "nvim-tree/nvim-web-devicons",
+        event = "VeryLazy",
     },
     {
         'numToStr/Comment.nvim',
-        event = "VeryLazy",
+        event = "BufEnter",
         config = true
     }, -- "gc" to comment visual regions/lines
     -- noicer ui
@@ -130,6 +131,7 @@ return {
 
     {
         "folke/zen-mode.nvim",
+        cmd  = { "ZenMode" },
         opts = {
             window = {
                 options = {
@@ -170,12 +172,48 @@ return {
             "nvim-lua/plenary.nvim"
         },
         keys = {
-            { "<leader>a", function() require("harpoon.mark").add_file() end, desc = "Harpoon Mark File", mode = "n" },
-            { "<leader>ht", function() require("harpoon.ui").toggle_quick_menu() end, desc = "[H]arpoon [T]oggle Menu", mode = "n" },
-            { "<C-1>", function() require("harpoon.ui").nav_file(1) end, desc = "Harpoon 1", mode = "n" },
-            { "<C-2>", function() require("harpoon.ui").nav_file(2) end, desc = "Harpoon 2", mode = "n" },
-            { "<C-3>", function() require("harpoon.ui").nav_file(3) end, desc = "Harpoon 3", mode = "n" },
-            { "<C-4>", function() require("harpoon.ui").nav_file(4) end, desc = "Harpoon 4", mode = "n" },
+            {
+                "<leader>a",
+                function() require("harpoon.mark").add_file() end,
+                desc = "Harpoon Mark File",
+                mode =
+                "n"
+            },
+            {
+                "<leader>ht",
+                function() require("harpoon.ui").toggle_quick_menu() end,
+                desc = "[H]arpoon [T]oggle Menu",
+                mode =
+                "n"
+            },
+            {
+                "<C-1>",
+                function() require("harpoon.ui").nav_file(1) end,
+                desc = "Harpoon 1",
+                mode =
+                "n"
+            },
+            {
+                "<C-2>",
+                function() require("harpoon.ui").nav_file(2) end,
+                desc = "Harpoon 2",
+                mode =
+                "n"
+            },
+            {
+                "<C-3>",
+                function() require("harpoon.ui").nav_file(3) end,
+                desc = "Harpoon 3",
+                mode =
+                "n"
+            },
+            {
+                "<C-4>",
+                function() require("harpoon.ui").nav_file(4) end,
+                desc = "Harpoon 4",
+                mode =
+                "n"
+            },
         },
         config = function(_, opts)
             local harpoon = require("harpoon")

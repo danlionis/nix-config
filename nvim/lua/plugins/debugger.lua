@@ -102,16 +102,22 @@ return {
     },
     {
         "theHamsta/nvim-dap-virtual-text",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        },
+        lazy = true,
         config = true
     },
     {
         "rcarriga/nvim-dap-ui",
+        dependencies = {
+            "mfussenegger/nvim-dap",
+        },
         keys = {
             { "<leader>du", function() require("dapui").toggle() end, { desc = "[D]rebugger [U]I" } },
         },
-        dependencies = { "mfussenegger/nvim-dap" },
+        -- dependencies = { "mfussenegger/nvim-dap" },
         config = function(_, _)
-            vim.notify("hello world")
             require("dapui").setup()
         end
     },
@@ -120,6 +126,7 @@ return {
         dependencies = {
             "williamboman/mason.nvim",
         },
+        lazy = true,
         -- setup = true
         opts = {
             enure_installed = { "python" },

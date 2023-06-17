@@ -9,7 +9,8 @@ return {
             highlight = { enable = true },
             indent = { enable = true },
             context_commentstring = { enable = true, enable_autocmd = false },
-            ensure_installed = { 'c',
+            ensure_installed = {
+                'c',
                 'go',
                 'lua',
                 'python',
@@ -49,6 +50,7 @@ return {
     },
 
     {
-        "nvim-treesitter/nvim-treesitter-context"
+        "nvim-treesitter/nvim-treesitter-context",
+        event = "BufReadPost",
     }
 }

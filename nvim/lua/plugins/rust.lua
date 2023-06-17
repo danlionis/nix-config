@@ -1,6 +1,7 @@
 return {
     {
         "simrat39/rust-tools.nvim",
+        ft = { "rust", "toml" },
         opts = {
             server = {
                 on_attach = function(client, bufnr)
@@ -8,13 +9,15 @@ return {
                     require("dapui")
                     -- require("plugins.lsp.keymaps").on_attach(client, bufnr)
                     -- require("plugins.lsp.format").on_attach(client, bufnr)
-                    vim.keymap.set("n", "<C-space>", function()
+                    vim.keymap.set("n", "K", function()
                         require("rust-tools").hover_actions.hover_actions()
                     end, { buffer = bufnr })
                 end
             },
-            hover_actions = {
-                auto_focus = true
+            tools = {
+                hover_actions = {
+                    auto_focus = false
+                }
             }
         },
         config = function(_, opts)

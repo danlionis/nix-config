@@ -10,10 +10,11 @@ local on_attach = function(on_attach)
 end
 
 return {
-    -- {
-    --     'j-hui/fidget.nvim',
-    --     config = true
-    -- },
+    {
+        'j-hui/fidget.nvim',
+        lazy = true,
+        config = true
+    },
     {
         -- LSP Configuration & Plugins
         'neovim/nvim-lspconfig',
@@ -24,7 +25,7 @@ return {
             'williamboman/mason-lspconfig.nvim',
 
             -- -- Useful status updates for LSP
-            -- 'fidget.nvim',
+            'fidget.nvim',
         },
         opts = {
             servers = {

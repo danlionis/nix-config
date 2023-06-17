@@ -28,6 +28,7 @@ function M.on_attach(client, buffer)
     local format = require("plugins.lsp.format").format
     self:map("<leader>f", format, { desc = "Format Document", has = "documentFormatting" })
     self:map("<leader>rn", vim.lsp.buf.rename, { expr = true, desc = "Rename", has = "rename" })
+    self:map("<F2>", vim.lsp.buf.rename, { expr = true, desc = "Rename", has = "rename" })
     -- self:map("<leader>cf", format, { desc = "Format Range", mode = "v", has = "documentRangeFormatting" })
 end
 

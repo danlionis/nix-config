@@ -5,9 +5,6 @@ function telescope_builtin(builtin, opts)
 end
 
 return {
-    {
-        "nvim-telescope/telescope-symbols.nvim"
-    },
     -- Fuzzy Finder (files, lsp, etc)
     {
         'nvim-telescope/telescope.nvim',
@@ -15,6 +12,7 @@ return {
         dependencies = {
             'nvim-lua/plenary.nvim',
             'nvim-telescope/telescope-dap.nvim',
+            "nvim-telescope/telescope-symbols.nvim",
             -- Fuzzy Finder Algorithm which dependencies local dependencies to be built. Only load if `make` is available
             { 'nvim-telescope/telescope-fzf-native.nvim', build = 'make', cond = vim.fn.executable 'make' == 1 },
         },
@@ -23,13 +21,17 @@ return {
             { '<C-p>',     telescope_builtin("git_files"),       desc = 'Search git files' },
             { '<leader>,', telescope_builtin("oldfiles"),        desc = '[?] Find recently opened files' },
             { '<leader>:', telescope_builtin("command_history"), desc = '[:] Command History' },
-            { '<leader>/', function()
-                -- You can pass additional configuration to telescope to change theme, layout, etc.
-                telescope_builtin("current_buffer_fuzzy_find", require('telescope.themes').get_dropdown {
-                    winblend = 10,
-                    previewer = false,
-                })()
-            end, { desc = '[/] Fuzzily search in current buffer]' } },
+            {
+                '<leader>/',
+                function()
+                    -- You can pass additional configuration to telescope to change theme, layout, etc.
+                    telescope_builtin("current_buffer_fuzzy_find", require('telescope.themes').get_dropdown {
+                        winblend = 10,
+                        previewer = false,
+                    })()
+                end,
+                desc = '[/] Fuzzily search in current buffer]'
+            },
             {
                 '<leader><space>',
                 telescope_builtin("buffers"),
