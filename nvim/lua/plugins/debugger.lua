@@ -53,28 +53,7 @@ return {
                 desc =
                 "Debugger Step Out"
             },
-            -- { "<leader>du", function() require("dapui").toggle() end,          { desc = "[D]rebugger [U]I" } },
         },
-        -- opts = {
-        --     adapters = {
-        --         python = {
-        --             type = 'python',
-        --             request = 'launch',
-        --             name = "Launch file",
-        --             program = "${file}",
-        --             pythonPath = function()
-        --                 return '/usr/bin/python3'
-        --             end,
-        --         }
-        --     }
-        -- },
-        --
-        -- config = function(_, opts)
-        --     require("dap").configurations = opts.adapters
-        --     print(vim.inspect(require("dap").configurations))
-        -- end
-        --
-        -- setup = true
         config = function(_, opts)
             local dap, dapui = require("dap"), require("dapui")
             dapui.setup()
