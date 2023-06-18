@@ -23,6 +23,10 @@ abbr -a eixt "exit"
 abbr -a cat "bat"
 abbr -a o "xdg-open"
 
+if command -v lazygit > /dev/null
+    abbr -a lg "lazygit"
+end
+
 # cargo
 if command -v cargo > /dev/null
     abbr -a cr "cargo run"
