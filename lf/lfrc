@@ -148,14 +148,13 @@ cmd zi ${{
 map gu cd ~/uni/
 map gD cd ~/Downloads/
 map gd cd ~/dev/
-map g. cd ~/
 
 map J :updir; set dironly true; down; set dironly false; open # https://github.com/gokcehan/lf/wiki/Tips#move-to-nextprevious-sibling-directory
 map K :updir; set dironly true; up; set dironly false; open
 
 
 cmd fzf_jump ${{
-    res="$(find . -maxdepth 1 | fzf --reverse --header='Jump to location')"
+    res="$(fd . --maxdepth 1 | fzf --reverse --header='Jump to location')"
     if [ -n "$res" ]; then
         if [ -d "$res" ]; then
             cmd="cd"
