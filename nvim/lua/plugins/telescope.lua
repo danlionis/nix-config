@@ -76,8 +76,19 @@ return {
             },
             {
                 '<leader>sb',
-                telescope_builtin("builtin",
-                    require('telescope.themes').get_dropdown({ previewer = false })),
+                function()
+                    telescope_builtin("builtin",
+                        require('telescope.themes').get_dropdown({ previewer = false }))()
+                end,
+                desc =
+                '[S]earch [B]uiltin'
+            },
+            {
+                '<leader>sc',
+                function()
+                    telescope_builtin("commands",
+                        require('telescope.themes').get_ivy({ previewer = false }))()
+                end,
                 desc =
                 '[S]earch [B]uiltin'
             },
