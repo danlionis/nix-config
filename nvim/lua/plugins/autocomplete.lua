@@ -35,6 +35,7 @@ return {
                     { name = "buffer" },
                     { name = "path" },
                     { name = "crates" },
+                    { name = "codeium" },
                 }),
                 -- formatting = {
                 --     format = function(_, item)
