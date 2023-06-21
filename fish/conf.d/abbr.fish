@@ -9,7 +9,7 @@ if command -v exa > /dev/null
     abbr -a ls "exa"
     abbr -a ll "exa -l"
     abbr -a lll "exa -la"
-    abbr -a lt "exa -laT -I .git -I target"
+    abbr -a lt "exa -laT -I '.git|target|node_modules'"
 else
     abbr -a ll "ls -l"
     abbr -a lll "ls -la"
