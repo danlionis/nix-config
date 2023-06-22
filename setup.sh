@@ -18,15 +18,20 @@ remove_existing() {
     fi
 }
 
-# remove_existing /tmp/.config/test
 remove_existing ~/.config/nvim
-remove_existing ~/.config/fish
-remove_existing ~/.config/kitty
-remove_existing ~/.config/starship.toml
-remove_existing ~/.config/lf
-
 ln -fs $PWD/nvim ~/.config/nvim
+
+remove_existing ~/.config/fish
 ln -fs $PWD/fish ~/.config/fish
+
+remove_existing ~/.config/kitty
 ln -fs $PWD/kitty ~/.config/kitty
+
+remove_existing ~/.config/starship.toml
 ln -fs $PWD/starship.toml ~/.config/starship.toml
+
+remove_existing ~/.config/lf
 ln -fs $PWD/lf ~/.config/lf
+
+remove_existing ~/.config/neofetch
+ln -fs $PWD/neofetch ~/.config/neofetch
