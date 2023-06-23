@@ -21,7 +21,7 @@ return {
         event = "BufReadPre",
         dependencies = {
             -- Automatically install LSPs to stdpath for neovim
-            'mason.nvim',
+            'williamboman/mason.nvim',
             'williamboman/mason-lspconfig.nvim',
 
             -- -- Useful status updates for LSP
@@ -38,22 +38,6 @@ return {
                         }
                     }
                 },
-                -- efm = {
-                --     init_options = { documentFormatting = true },
-                --     settings = {
-                --         languages = {
-                --             python = {
-                --                 {
-                --                     formatCommand = "black --fast -",
-                --                     formatStdin = true,
-                --                 }
-                --             }
-                --         },
-                --     },
-                --     filetypes = {
-                --         "python"
-                --     }
-                -- },
                 clangd = {},
                 pyright = {},
                 tsserver = {},
@@ -116,7 +100,7 @@ return {
             local servers = opts.servers
             local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
 
-            require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
+            -- require("mason-lspconfig").setup({ ensure_installed = vim.tbl_keys(servers) })
             require("mason-lspconfig").setup_handlers({
                 function(server)
                     local server_opts = servers[server] or {}

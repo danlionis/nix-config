@@ -1,27 +1,20 @@
 return {
     {
         'williamboman/mason.nvim',
-        cmd  = "Mason",
-        opts = {
-            ensure_installed = {
-                "black",
-                "clangd",
-                "codelldb",
-                "debugpy",
-                "gopls",
-                "ltex-ls",
-                "lua-language-server",
-                "mypy",
-                "ruff",
-                "pyright",
-                "rust-analyzer",
-                "svelte-language-server",
-                "texlab",
-                "typescript-language-server",
-            }
+        cmd    = "Mason",
+        lazy   = true,
+        config = true
+    },
+    {
+        "jay-babu/mason-null-ls.nvim",
+        event = { "BufReadPre", "BufNewFile" },
+        dependencies = {
+            "williamboman/mason.nvim",
+            "jose-elias-alvarez/null-ls.nvim",
         },
-        -- config = function(_, opts)
-        --     require("mason").setup(opts)
-        -- Vkkk
+        opts = {
+            ensure_installed = nil,
+            automatic_installation = true
+        }
     }
 }
