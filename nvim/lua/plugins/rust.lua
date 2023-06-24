@@ -12,7 +12,13 @@ return {
                     vim.keymap.set("n", "K", function()
                         require("rust-tools").hover_actions.hover_actions()
                     end, { buffer = bufnr })
-                end
+                end,
+                settings = {
+                    ["rust-analyzer"] = {
+                        procMacro = { enable = true },
+                        cargo = { features = "all" }
+                    }
+                }
             },
             tools = {
                 hover_actions = {
