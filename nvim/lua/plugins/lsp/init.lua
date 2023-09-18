@@ -30,11 +30,22 @@ return {
         opts = {
             servers = {
                 ltex = {
+                    -- filetypes = { "norg" },
                     settings = {
                         ltex = {
+                            -- enabled = {
+                            --     "bibtex", "context", "context.tex", "html", "latex", "markdown", "org",
+                            --     "restructuredtext", "rsweave", "norg"
+                            -- },
                             dictionary = {
-                                ["en-US"] = { "QUIC", ":~/ltexdict.txt" },
-                            }
+                                ["en-US"] = { "QUIC" },
+                            },
+                            disabledRules = {
+                                ["en-US"] = { "ARROWS" },
+                            },
+                            -- hiddenFalsePositives = {
+                            --     ["en-US"] = { "./test/ltex-false-positives.txt" }
+                            -- }
                         }
                     }
                 },

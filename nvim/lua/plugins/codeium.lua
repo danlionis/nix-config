@@ -13,6 +13,7 @@ return {
     --
     {
         'Exafunction/codeium.vim',
+        enabled = false,
         event = 'VeryLazy',
         config = function()
             -- Change '<C-g>' here to any keycode you like.

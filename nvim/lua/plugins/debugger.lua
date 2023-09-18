@@ -108,29 +108,30 @@ return {
         lazy = true,
         -- setup = true
         opts = {
-            enure_installed = { "python" },
-            automatic_setup = true,
-            handlers = {}
-            -- handlers = {
-            --     function(config)
-            --         require("mason-nvim-dap").default_setup(config)
-            --     end,
-            --     rust = function(config)
-            --         config.configurations = {
-            --             {
-            --                 name = 'Rust: Launch',
-            --                 type = 'codelldb',
-            --                 request = 'launch',
-            --                 program = function()
-            --                     return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/target/debug', 'file')
-            --                 end,
-            --                 cwd = '${workspaceFolder}',
-            --                 stopOnEntry = false,
-            --                 args = {},
-            --             },
-            --         }
-            --     end
-            -- }
-        }
+            enure_installed = { "python", "codelldb", "gopls" },
+            -- handlers = {}
+            handlers = {
+                function(config)
+                    require("mason-nvim-dap").default_setup(config)
+                end,
+
+                -- c = function(config)
+                --     config.configurations = {
+                --         {
+                --             name = 'C: Launch',
+                --             type = 'codelldb',
+                --             request = 'launch',
+                --             program = function()
+                --                 return vim.fn.input('Path to executable: ', vim.fn.getcwd(), 'file')
+                --             end,
+                --             cwd = '${workspaceFolder}',
+                --             stopOnEntry = false,
+                --             args = {},
+                --         },
+                --     }
+                -- end
+            }
+        },
+        config = true,
     }
 }

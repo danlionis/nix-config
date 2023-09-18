@@ -2,7 +2,7 @@
 return {
     -- enable mini.starter
     {
-        enabled = false,
+        enabled = true,
         "echasnovski/mini.starter",
         version = false, -- wait till new 0.7.0 release to put it back on semver
         event = "VimEnter",

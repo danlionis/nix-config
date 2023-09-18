@@ -35,3 +35,6 @@ ln -fs $PWD/lf ~/.config/lf
 
 remove_existing ~/.config/neofetch
 ln -fs $PWD/neofetch ~/.config/neofetch
+
+remove_existing ~/.config/lazygit
+ln -fs $PWD/lazygit ~/.config/lazygit

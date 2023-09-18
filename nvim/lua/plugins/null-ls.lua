@@ -10,6 +10,7 @@ return {
                     null_ls.builtins.formatting.black,
                     null_ls.builtins.formatting.beautysh,
                     null_ls.builtins.formatting.prettier,
+                    null_ls.builtins.formatting.sql_formatter,
                     -- null_ls.builtins.formatting.prettier.with({
                     --     filetypes = { "html", "json", "yaml", "typescript", "javascript" },
                     -- }),
