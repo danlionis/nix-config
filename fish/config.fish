@@ -18,6 +18,10 @@ if type -q zoxide
     zoxide init fish | source
 end
 
+if type -q direnv
+    direnv hook fish| source
+end
+
 # https://github.com/gokcehan/lf/blob/master/etc/lfcd.fish
 # 
 # Change working dir in fish to last dir in lf on exit (adapted from ranger).
