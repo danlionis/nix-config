@@ -30,6 +30,12 @@
 
   # Enable networking
   networking.networkmanager.enable = true;
+  # networking.networkmanager.dns = "none";
+  # networking.nameservers = [ "127.0.0.1" "::1" ];
+  # networking.dhcpcd.extraConfig = "nohook resolv.conf";
+
+  # https://nixos.wiki/wiki/WireGuard#Setting_up_WireGuard_with_NetworkManager
+  # networking.firewall.checkReversePath = "loose";
 
   # Set your time zone.
   time.timeZone = "Europe/Berlin";
@@ -56,9 +62,9 @@
   services.xserver.displayManager.gdm.enable = true;
   services.xserver.desktopManager.gnome.enable = true;
   programs.hyprland.enable = true;
-  programs.hyprland.xwayland.hidpi = true;
 
   programs.direnv.enable = true;
+
   # Configure keymap in X11
   services.xserver = {
     layout = "de";
@@ -70,6 +76,11 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+  services.printing.drivers = [
+    pkgs.brlaser
+    pkgs.brgenml1lpr
+    pkgs.brgenml1cupswrapper
+  ];
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -88,6 +99,9 @@
     #media-session.enable = true;
   };
 
+  # services.https-dns-proxy.enable = true;
+  # services.https-dns-proxy.port = 53;
+
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
@@ -98,32 +112,37 @@
     shell = pkgs.fish;
     extraGroups = [ "networkmanager" "wheel" "docker" ];
     packages = with pkgs; [
+      # discord # install via flatpak
       bat
       brave
       btop
-      direnv
-      # discord # install via flatpak
-      exa
+      chromium
+      eww-wayland
+      eza
       fd
       firefox
-      hyprpaper
-      waybar
-      eww-wayland
-      rofi-wayland
       fzf
       gdu
       gnome.gnome-tweaks
+      gnomeExtensions.blur-my-shell
       gnomeExtensions.dash-to-dock
+      gnomeExtensions.gesture-improvements
       gnomeExtensions.pop-shell
+      gnomeExtensions.x11-gestures
       go
+      hyprpaper
       lazygit
       lf
       nixpkgs-fmt
       nodejs
+      obsidian
       python3
       ripgrep
+      unityhub
+      rofi-wayland
       rustup
       starship
+      waybar
       yubioath-flutter
       zoxide
     ];
@@ -139,15 +158,17 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    dig
     file
     gcc
     gnumake
     kitty
+    man-pages
+    man-pages-posix
     neofetch
     openssl
     pkg-config
     unzip
-    # libfprint
     vim
     wget
     xclip
@@ -187,6 +208,9 @@
 
   programs.nix-ld.enable = true;
 
+  # steam
+  programs.steam.enable = true;
+
   environment.variables = {
     # NIX_LD = lib.fileContents "${pkgs.stdenv.cc}/nix-support/dynamic-linker";
     PKG_CONFIG_PATH = "${pkgs.openssl.dev}/lib/pkgconfig";
@@ -209,8 +233,16 @@
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
   # fonts
-  fonts.fonts = with pkgs; [
+  fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "JetBrainsMono" ]; })
   ];
+
+  services.tailscale.enable = true;
+
+  documentation = {
+    enable = true;
+    man.enable = true;
+    dev.enable = true;
+  };
 
 }
