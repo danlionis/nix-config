@@ -13,7 +13,8 @@ return {
     {
         'j-hui/fidget.nvim',
         lazy = true,
-        config = true
+        config = true,
+        tag = "legacy",
     },
     {
         -- LSP Configuration & Plugins
