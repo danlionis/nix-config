@@ -9,6 +9,7 @@
     [
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      ../common/hyprland.nix
     ];
 
   # Bootloader.
@@ -60,8 +61,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.xserver.displayManager.gdm.enable = true;
-  services.xserver.desktopManager.gnome.enable = true;
-  programs.hyprland.enable = true;
+  # services.xserver.desktopManager.gnome.enable = true;
 
   programs.direnv.enable = true;
 
@@ -117,7 +117,6 @@
       brave
       btop
       chromium
-      eww-wayland
       eza
       fd
       firefox
@@ -130,7 +129,6 @@
       gnomeExtensions.pop-shell
       gnomeExtensions.x11-gestures
       go
-      hyprpaper
       lazygit
       lf
       nixpkgs-fmt
@@ -139,10 +137,8 @@
       python3
       ripgrep
       unityhub
-      rofi-wayland
       rustup
       starship
-      waybar
       yubioath-flutter
       zoxide
     ];
@@ -158,6 +154,7 @@
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   environment.systemPackages = with pkgs; [
+    brightnessctl
     dig
     file
     gcc
@@ -238,6 +235,12 @@
   ];
 
   services.tailscale.enable = true;
+
+  security.pam.services.swaylock.text = ''
+    # PAM configuration file for the swaylock screen locker. By default, it includes
+    # the 'login' configuration file (see /etc/pam.d/login)
+    auth include login
+  '';
 
   documentation = {
     enable = true;

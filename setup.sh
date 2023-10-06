@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 remove_existing() {
     local path="$1"
@@ -38,3 +38,12 @@ ln -fs $PWD/neofetch ~/.config/neofetch
 
 remove_existing ~/.config/lazygit
 ln -fs $PWD/lazygit ~/.config/lazygit
+
+remove_existing ~/.config/hypr
+ln -fs $PWD/hypr ~/.config/hypr
+
+remove_existing ~/.config/swaylock
+ln -fs $PWD/swaylock ~/.config/swaylock
+
+remove_existing ~/.config/waybar
+ln -fs $PWD/waybar ~/.config/waybar

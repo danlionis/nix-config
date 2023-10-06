@@ -15,9 +15,12 @@
     # Shameless plug: looking for a way to nixify your themes and make
     # everything match nicely? Try nix-colors!
     # nix-colors.url = "github:misterio77/nix-colors";
+
+    nix-index-database.url = "github:Mic92/nix-index-database";
+    nix-index-database.inputs.nixpkgs.follows = "nixpkgs";
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
+  outputs = { self, nixpkgs, home-manager, nix-index-database, ... }@inputs:
     let inherit (self) outputs; in {
       # NixOS configuration entrypoint
       # Available through 'nixos-rebuild --flake .#your-hostname'
@@ -27,11 +30,15 @@
       };
 
       nixosConfigurations = {
-        # FIXME replace with your hostname
         dan-laptop = nixpkgs.lib.nixosSystem {
           specialArgs = { inherit inputs outputs; }; # Pass flake inputs to our config
           # > Our main nixos configuration file <
-          modules = [ ./hosts/laptop ];
+          modules = [
+            ./hosts/laptop
+            nix-index-database.nixosModules.nix-index
+            { programs.command-not-found.enable = false; }
+            # { programs.nix-index-database.comma.enable = true; }
+          ];
         };
       };
 
