@@ -110,10 +110,11 @@
     isNormalUser = true;
     description = "Dan Lionis";
     shell = pkgs.fish;
-    extraGroups = [ "networkmanager" "wheel" "docker" ];
+    extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
     packages = with pkgs; [
       # discord # install via flatpak
       bat
+      bottles
       brave
       btop
       chromium
@@ -167,6 +168,7 @@
     pkg-config
     unzip
     vim
+    virt-manager
     wget
     xclip
   ];
@@ -181,6 +183,7 @@
 
   # Docker
   virtualisation.docker.enable = true;
+  virtualisation.libvirtd.enable = true;
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
