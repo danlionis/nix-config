@@ -118,6 +118,7 @@
       brave
       btop
       chromium
+      comma
       eza
       fd
       firefox
@@ -130,16 +131,19 @@
       gnomeExtensions.pop-shell
       gnomeExtensions.x11-gestures
       go
+      jetbrains.rider
       lazygit
       lf
       nixpkgs-fmt
       nodejs
       obsidian
+      piper
       python3
       ripgrep
-      unityhub
       rustup
+      spotify
       starship
+      unityhub
       yubioath-flutter
       zoxide
     ];
@@ -251,4 +255,5 @@
     dev.enable = true;
   };
 
+  services.ratbagd.enable = true;
 }
