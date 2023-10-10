@@ -131,7 +131,8 @@
       gnomeExtensions.pop-shell
       gnomeExtensions.x11-gestures
       go
-      jetbrains.rider
+      # jetbrains.rider
+      killall
       lazygit
       lf
       nixpkgs-fmt
@@ -143,7 +144,6 @@
       rustup
       spotify
       starship
-      unityhub
       yubioath-flutter
       zoxide
     ];
