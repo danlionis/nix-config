@@ -256,4 +256,6 @@
   };
 
   services.ratbagd.enable = true;
+
+  services.blueman.enable = true;
 }
