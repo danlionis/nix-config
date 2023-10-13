@@ -9,17 +9,18 @@
     eww-wayland
     grim
     hyprpaper
-    udiskie
     imagemagick
+    libnotify
+    networkmanagerapplet
+    pywal
     rofi-wayland
     slurp
-    wl-clipboard
     swappy
     swayidle
     swaylock-effects
+    udiskie
     waybar
-    libnotify
-    networkmanagerapplet
+    wl-clipboard
   ];
 
   services.udisks2.enable = true;

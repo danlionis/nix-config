@@ -130,13 +130,10 @@
       gnomeExtensions.gesture-improvements
       gnomeExtensions.pop-shell
       gnomeExtensions.x11-gestures
-      go
-      # jetbrains.rider
       killall
       lazygit
       lf
       nixpkgs-fmt
-      nodejs
       obsidian
       piper
       python3
@@ -165,6 +162,7 @@
     gcc
     gnumake
     kitty
+    libreoffice
     man-pages
     man-pages-posix
     neofetch
