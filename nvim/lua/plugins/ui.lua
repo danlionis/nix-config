@@ -1,5 +1,8 @@
 return {
     {
+        "ap/vim-css-color"
+    },
+    {
         "nvim-tree/nvim-web-devicons",
         event = "VeryLazy",
     },
@@ -123,9 +126,15 @@ return {
     {
         'lukas-reineke/indent-blankline.nvim',
         event = "BufReadPre",
+        main = "ibl",
         opts = {
-            char = '┊',
-            show_trailing_blankline_indent = false,
+            indent = { char = '┊' },
+            whitespace = {
+                remove_blankline_trail = true,
+            },
+            scope = {
+                enabled = false
+            }
         }
     },
 
