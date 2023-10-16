@@ -66,22 +66,41 @@
   };
 
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  # services.xserver.enable = true;
+  # # Configure keymap in X11
+  # services.xserver = {
+  #   layout = "eu";
+  #   xkbVariant = "";
+  # };
 
   # Enable the GNOME Desktop Environment.
-  services.xserver.displayManager.gdm.enable = true;
+  # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
+
+  services.greetd = {
+    enable = true;
+    settings = {
+      default_session = {
+        command = "${pkgs.greetd.tuigreet}/bin/tuigreet --remember --time --cmd Hyprland";
+        user = "greeter";
+      };
+    };
+  };
+
+  # https://github.com/apognu/tuigreet/issues/76
+  systemd.tmpfiles.rules =
+    # let
+    #   user = config.services.greetd.settings.default_session.user;
+    # in
+    [
+      "d /var/cache/tuigreet 700 greeter greeter"
+    ];
 
   programs.direnv.enable = true;
 
-  # Configure keymap in X11
-  services.xserver = {
-    layout = "eu";
-    xkbVariant = "";
-  };
 
   # Configure console keymap
-  console.keyMap = "de";
+  console.keyMap = "us";
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
@@ -122,6 +141,12 @@
     extraGroups = [ "networkmanager" "wheel" "docker" "libvirtd" ];
     packages = with pkgs; [
       # discord # install via flatpak
+      # gnome.gnome-tweaks
+      # gnomeExtensions.blur-my-shell
+      # gnomeExtensions.dash-to-dock
+      # gnomeExtensions.gesture-improvements
+      # gnomeExtensions.pop-shell
+      # gnomeExtensions.x11-gestures
       bat
       bottles
       brave
@@ -133,12 +158,6 @@
       firefox
       fzf
       gdu
-      gnome.gnome-tweaks
-      gnomeExtensions.blur-my-shell
-      gnomeExtensions.dash-to-dock
-      gnomeExtensions.gesture-improvements
-      gnomeExtensions.pop-shell
-      gnomeExtensions.x11-gestures
       killall
       lazygit
       lf
