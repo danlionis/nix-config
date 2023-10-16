@@ -162,6 +162,7 @@
       lazygit
       lf
       nixpkgs-fmt
+      prismlauncher-qt5
       obsidian
       piper
       python3
