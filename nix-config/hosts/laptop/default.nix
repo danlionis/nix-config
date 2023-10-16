@@ -17,6 +17,9 @@
   boot.loader.efi.canTouchEfiVariables = true;
   boot.loader.systemd-boot.configurationLimit = 30;
 
+  # kernel version
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   # Setup keyfile
   boot.initrd.secrets = {
     "/crypto_keyfile.bin" = null;
