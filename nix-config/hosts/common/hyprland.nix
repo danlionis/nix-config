@@ -21,6 +21,8 @@
     udiskie
     waybar
     wl-clipboard
+    wlogout
+    wlsunset
   ];
 
   services.udisks2.enable = true;
