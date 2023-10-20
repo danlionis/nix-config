@@ -77,6 +77,18 @@
   # services.xserver.displayManager.gdm.enable = true;
   # services.xserver.desktopManager.gnome.enable = true;
 
+  xdg = {
+    autostart.enable = true;
+    portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+  };
+
+
   services.greetd = {
     enable = true;
     settings = {
@@ -158,18 +170,21 @@
       firefox
       fzf
       gdu
+      jetbrains.rider
       killall
       lazygit
       lf
       nixpkgs-fmt
-      prismlauncher-qt5
+      nodejs
       obsidian
       piper
+      prismlauncher-qt5
       python3
       ripgrep
       rustup
       spotify
       starship
+      yubikey-manager
       yubioath-flutter
       zoxide
     ];
