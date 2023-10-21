@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ config, pkgs, lib, outputs, ... }:
+{ config, pkgs, lib, outputs, inputs, ... }:
 
 {
   imports =
@@ -10,6 +10,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../common/hyprland.nix
+      inputs.xremap.nixosModules.default
     ];
 
   # Bootloader.
@@ -307,4 +308,24 @@
   services.ratbagd.enable = true;
 
   services.blueman.enable = true;
+
+  services.xremap = {
+    userName = "dan";
+    serviceMode = "user";
+    withWlroots = true;
+    config = {
+      modmap = [
+        {
+          name = "Global";
+          remap = {
+            "Capslock" = {
+              held = "leftctrl";
+              alone = "Esc";
+              alone_timeout_millis = 150;
+            };
+          };
+        }
+      ];
+    };
+  };
 }
