@@ -12,6 +12,7 @@
     imagemagick
     libnotify
     networkmanagerapplet
+    playerctl
     pywal
     rofi-wayland
     slurp
