@@ -148,6 +148,7 @@ cmd zi ${{
 map gu cd ~/uni/
 map gD cd ~/Downloads/
 map gd cd ~/dev/
+map gm cd /run/media
 
 map J :updir; set dironly true; down; set dironly false; open # https://github.com/gokcehan/lf/wiki/Tips#move-to-nextprevious-sibling-directory
 map K :updir; set dironly true; up; set dironly false; open
