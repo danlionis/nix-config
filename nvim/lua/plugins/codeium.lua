@@ -13,11 +13,15 @@ return {
     --
     {
         'Exafunction/codeium.vim',
-        enabled = false,
+        enabled = true,
         event = 'VeryLazy',
         config = function()
             -- Change '<C-g>' here to any keycode you like.
             vim.g.codeium_disable_bindings = 1
+
+            vim.g.filetypes = {
+                markdown = false
+            }
 
             vim.keymap.set('i', '<C-a>', function() return vim.fn['codeium#Accept']() end,
                 { expr = true, desc = "Codeium Accept" })
