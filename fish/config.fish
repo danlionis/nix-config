@@ -1,4 +1,4 @@
-set -gx EDITOR /usr/bin/nvim
+set -gx EDITOR /usr/bin/env nvim
 
 fzf_key_bindings
 set -gx FZF_DEFAULT_OPTS "--height 40%"
