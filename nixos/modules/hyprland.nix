@@ -2,6 +2,7 @@
 {
   programs.hyprland = {
     enable = true;
+    withUWSM = true;
     xwayland.enable = true;
     # package = pkgs.unstable.hyprland;
   };
@@ -12,10 +13,14 @@
 
     brightnessctl
     dunst
-    eww
-    grim
+    gum
+    hypridle
+    hyprlock
     hyprpaper
+    hyprshot
+    hyprsunset
     imagemagick
+    impala
     libnotify
     libsForQt5.polkit-kde-agent
     networkmanagerapplet
@@ -23,18 +28,16 @@
     playerctl
     pywal
     rofi-wayland
+    satty
     slurp
-    swappy
     sway-audio-idle-inhibit
     tofi
     udiskie
-    waybar
+    walker
     wl-clipboard
     wlogout
-    wlsunset
 
-    unstable.hypridle
-    unstable.hyprlock
+    unstable.wiremix
   ];
 
   services.udisks2.enable = true;

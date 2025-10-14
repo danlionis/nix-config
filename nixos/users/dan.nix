@@ -23,6 +23,6 @@ in
       "wireshark"
     ];
     openssh.authorizedKeys.keys = keys;
-    shell = pkgs.nushell;
+    # shell = pkgs.nushell;
   };
 }

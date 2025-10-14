@@ -132,7 +132,7 @@
 
   nixpkgs.overlays = builtins.attrValues outputs.overlays;
 
-  environment.shells = with pkgs; [ fish ];
+  # environment.shells = with pkgs; [ fish ];
 
   environment.systemPackages = with pkgs; [
     # dev

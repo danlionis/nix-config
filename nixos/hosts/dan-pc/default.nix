@@ -149,6 +149,7 @@
     # other
     openssl
     pkg-config
+    chezmoi
 
     rocmPackages.rocm-smi
 
