@@ -62,63 +62,67 @@
         mode = "u=rwx,g=rx,o=";
       }
 
+      "/home"
     ];
     files = [
       "/etc/machine-id"
       # { file = "/var/keys/secret_file"; parentDirectory = { mode = "u=rwx,g=,o="; }; }
     ];
-    users.dan = {
-      directories = [
-        ".persist"
-
-        "dev"
-        "Downloads"
-        "dotfiles"
-        "uni"
-        "Music"
-        "Pictures"
-        "Documents"
-        "Videos"
-
-        ".local/share/PrismLauncher"
-        ".local/share/Steam"
-        ".local/share/atuin"
-        ".local/share/bottles"
-        ".local/share/containers"
-        ".local/share/direnv"
-        ".local/share/fish"
-        ".local/share/flatpak"
-        ".local/share/nvim"
-        ".local/share/zoxide"
-        ".local/share/Anki2"
-
-        ".local/state/wireplumber"
-        ".local/state/lazygit"
-
-        ".cache/nix-index"
-        ".cache/zotero"
-        ".cache/darktable"
-
-        ".config"
-
-        ".var/app" # flatpak data
-
-        {
-          directory = ".gnupg";
-          mode = "0700";
-        }
-        {
-          directory = ".ssh";
-          mode = "0700";
-        }
-        {
-          directory = ".local/share/keyrings";
-          mode = "0700";
-        }
-
-      ];
-      files = [ ];
-    };
+    # users.dan = {
+    #   directories = [
+    #     ".persist"
+    #
+    #     "Documents"
+    #     "Downloads"
+    #     "Music"
+    #     "Pictures"
+    #     "Videos"
+    #     "dev"
+    #     "dotfiles"
+    #     "uni"
+    #
+    #     ".local/share/Anki2"
+    #     ".local/share/PrismLauncher"
+    #     ".local/share/Steam"
+    #     ".local/share/atuin"
+    #     ".local/share/bottles"
+    #     ".local/share/chezmoi"
+    #     ".local/share/containers"
+    #     ".local/share/direnv"
+    #     ".local/share/fish"
+    #     ".local/share/flatpak"
+    #     ".local/share/nvim"
+    #     ".local/share/zoxide"
+    #
+    #     ".local/state/lazygit"
+    #     ".local/state/wireplumber"
+    #
+    #     ".cache/darktable"
+    #     ".cache/nix-index"
+    #     ".cache/zotero"
+    #
+    #     ".config"
+    #
+    #     ".var/app" # flatpak data
+    #
+    #     {
+    #       directory = ".gnupg";
+    #       mode = "0700";
+    #     }
+    #     {
+    #       directory = ".ssh";
+    #       mode = "0700";
+    #     }
+    #     {
+    #       directory = ".local/share/keyrings";
+    #       mode = "0700";
+    #     }
+    #
+    #   ];
+    #   files = [
+    #     ".profile"
+    #   ];
+    # };
   };
 
   security.sudo.extraConfig = ''
