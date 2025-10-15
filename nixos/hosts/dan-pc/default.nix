@@ -38,6 +38,7 @@
     ../../modules/terminal.nix
     ../../modules/wireshark.nix
     ../../modules/yubikey.nix
+    ../../modules/localsend.nix
 
     ./guests/ollama.nix
   ];
