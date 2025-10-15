@@ -12,6 +12,7 @@
     adw-gtk3
 
     brightnessctl
+    clipse
     dunst
     gum
     hypridle
