@@ -151,6 +151,7 @@
     openssl
     pkg-config
     chezmoi
+    jc
 
     rocmPackages.rocm-smi
 
