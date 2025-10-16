@@ -16,6 +16,8 @@
     ./modules/development/nix.nix
     ./modules/development/python.nix
     ./modules/development/latex.nix
+
+    ./modules/desktop/walker.nix
   ];
 
   # This value determines the Home Manager release that your configuration is

@@ -43,6 +43,15 @@
       url = "github:serokell/deploy-rs";
     };
 
+    # https://github.com/NixOS/nixpkgs/issues/448779
+    elephant = {
+      url = "github:abenz1267/elephant";
+    };
+    walker = {
+      url = "github:abenz1267/walker";
+      inputs.elephant.follows = "elephant";
+    };
+
   };
 
   outputs =

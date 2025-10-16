@@ -34,7 +34,6 @@
     sway-audio-idle-inhibit
     tofi
     udiskie
-    walker
     wl-clipboard
     wlogout
 
