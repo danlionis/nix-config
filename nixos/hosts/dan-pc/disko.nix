@@ -28,11 +28,15 @@
                 subvolumes = {
                   # Subvolume name is different from mountpoint
                   "/root" = {
+                    mountOptions = [
+                      "compress=zstd"
+                      "noatime"
+                    ];
                     mountpoint = "/";
                   };
                   "/persist" = {
                     mountOptions = [
-                      "subvol=persist"
+                      "compress=zstd"
                       "noatime"
                     ];
                     mountpoint = "/persist";
