@@ -26,11 +26,13 @@
         man-pages
         man-pages-posix
         navi
+        nodejs
         nushell
         prettierd
         ripgrep
         starship
         tldr
+        tree-sitter
         unzip
         wget
         xclip
