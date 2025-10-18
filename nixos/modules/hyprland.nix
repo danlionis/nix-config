@@ -36,6 +36,7 @@
     udiskie
     wl-clipboard
     wlogout
+    wlsunset
 
     unstable.wiremix
   ];
