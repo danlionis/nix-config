@@ -16,6 +16,8 @@
         "${config.users.users.dan.home}/Videos"
         "${config.users.users.dan.home}/dev"
         "${config.users.users.dan.home}/uni"
+        "${config.users.users.dan.home}/.config"
+        "${config.users.users.dan.home}/.ssh/config"
       ];
 
       pruneOpts = [
