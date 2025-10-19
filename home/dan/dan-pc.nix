@@ -15,6 +15,7 @@
 
     ./modules/development/nix.nix
     ./modules/development/python.nix
+    ./modules/development/lua.nix
     ./modules/development/latex.nix
 
     ./modules/desktop/walker.nix
