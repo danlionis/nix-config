@@ -7,6 +7,7 @@
       kanidm = "auth.${lionis}";
       paperless = "paper.${lionis}";
       git = "git.${lionis}";
+      backup = "kronos.ts.lionis.net";
     };
   };
 }
