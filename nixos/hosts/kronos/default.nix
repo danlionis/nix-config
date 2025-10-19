@@ -18,6 +18,7 @@
     ./hardware-configuration.nix
 
     ../../users/dan.nix
+    ../../users/backup.nix
 
     ../../modules/tailscale.nix
     ../../modules/caddy.nix
