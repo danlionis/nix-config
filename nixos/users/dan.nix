@@ -14,6 +14,7 @@ in
   users.users.dan = {
     isNormalUser = true;
     hashedPasswordFile = config.age.secrets."password-hash".path;
+    createHome = true;
     extraGroups = ifTheyExist [
       "networkmanager"
       "wheel"

@@ -239,5 +239,13 @@
 
   nixpkgs.config.rocmSupport = true;
 
-  age.identityPaths = [ "/persist/${config.users.users.dan.home}/.ssh/id_ed25519" ]; # https://github.com/ryantm/agenix/issues/45
+  services.openssh = {
+    enable = true;
+    hostKeys = [
+      {
+        path = "/persist/etc/ssh/ssh_host_ed25519_key";
+        type = "ed25519";
+      }
+    ];
+  };
 }
