@@ -46,8 +46,13 @@
 
       exclude = [
         ".venv"
+        "venv"
         "node_modules"
         "target"
+        ".gradle"
+        "build"
+        "__pycache__"
+        "dist"
       ];
     };
   };
