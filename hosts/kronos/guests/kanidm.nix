@@ -5,12 +5,12 @@ in
 {
   age.secrets = {
     "kanidm_cert" = {
-      file = ../../../../secrets/kanidm/cert.pem;
+      file = ../../../secrets/kanidm/cert.pem;
       owner = "kanidm";
     };
 
     "kanidm_key" = {
-      file = ../../../../secrets/kanidm/key.pem;
+      file = ../../../secrets/kanidm/key.pem;
       owner = "kanidm";
     };
   };

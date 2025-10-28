@@ -74,7 +74,7 @@
     in
     {
 
-      overlays = import ./nixos/overlays { inherit inputs outputs; };
+      overlays = import ./pkgs { inherit inputs outputs; };
 
       devShells = forAllSystems (
         system:
@@ -103,26 +103,10 @@
         }
       );
 
-      nixosConfigurations =
-        let
-          mksystem = import ./lib/mksystem.nix {
-            inherit inputs outputs;
-            nixpkgs = nixpkgs-stable;
-          };
-        in
-        builtins.mapAttrs (name: props: mksystem props name) {
-          kronos = {
-            user = "dan";
-          };
-          dan-pc = {
-            user = "dan";
-            home-manager = true;
-          };
-          vm-aarch64 = {
-            user = "dan";
-            home-manager = true;
-          };
-        };
+      nixosConfigurations = import ./flake/hosts.nix {
+        inherit inputs outputs;
+        nixpkgs = nixpkgs-stable;
+      };
 
       # Build darwin flake using:
       # $ darwin-rebuild build --flake .#dan-mbp

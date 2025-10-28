@@ -61,8 +61,8 @@ in
     '';
   };
 
-  age.secrets."restic/password".file = ../../../../secrets/restic/password;
-  age.secrets."restic/paperless-b2-env".file = ../../../../secrets/restic/paperless-b2-env;
+  age.secrets."restic/password".file = ../../secrets/restic/password;
+  age.secrets."restic/paperless-b2-env".file = ../../secrets/restic/paperless-b2-env;
 
   services.restic.backups = {
     paperless-b2-daily = {

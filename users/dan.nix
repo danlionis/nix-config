@@ -6,10 +6,10 @@
 }:
 let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-  keys = (import ../../keys.nix).dan;
+  keys = (import ../keys.nix).dan;
 in
 {
-  age.secrets."password-hash".file = ../../secrets/password-hash;
+  age.secrets."password-hash".file = ../secrets/password-hash;
 
   users.users.dan = {
     isNormalUser = true;

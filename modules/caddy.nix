@@ -4,7 +4,7 @@
   ...
 }:
 {
-  age.secrets."CLOUDFLARE_DNS_API_TOKEN".file = ../../secrets/CLOUDFLARE_DNS_API_TOKEN;
+  age.secrets."CLOUDFLARE_DNS_API_TOKEN".file = ../secrets/CLOUDFLARE_DNS_API_TOKEN;
 
   services.caddy = {
     enable = true;

@@ -1,7 +1,7 @@
 { pkgs, ... }:
 
 let
-  backupKey = (import ../../keys.nix).backup;
+  backupKey = (import ../keys.nix).backup;
   rrsyncCommand = "${pkgs.rrsync}/bin/rrsync ~/";
 in
 {

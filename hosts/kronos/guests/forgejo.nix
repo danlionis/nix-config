@@ -35,7 +35,7 @@ in
   };
 
   age.secrets.forgejo-oauth-secret = {
-    file = ../../../../secrets/forgejo/oauth_secret;
+    file = ../../../secrets/forgejo/oauth_secret;
     owner = cfg.user;
   };
 

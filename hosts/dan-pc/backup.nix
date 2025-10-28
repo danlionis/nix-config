@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 {
-  age.secrets."restic/password".file = ../../../secrets/restic/password;
+  age.secrets."restic/password".file = ../../secrets/restic/password;
 
   users.users.restic = {
     isNormalUser = true;
@@ -58,7 +58,7 @@
   };
 
   age.secrets."restic/ssh_key" = {
-    file = ../../../secrets/restic/ssh_key;
+    file = ../../secrets/restic/ssh_key;
     owner = "restic";
     group = "users";
     mode = "0400";

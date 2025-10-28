@@ -31,35 +31,34 @@ systemFunc rec {
   specialArgs = {
     inherit inputs outputs;
   };
-  modules =
-    [
-      ../modules/globals.nix
-      ../globals.nix
+  modules = [
+    ../modules/globals.nix
+    ../globals.nix
 
-      {
-        nixpkgs.overlays = builtins.attrValues outputs.overlays; # apply overlays
-        nixpkgs.config.allowUnfree = true; # allow unfree packages.
-      }
+    {
+      nixpkgs.overlays = builtins.attrValues outputs.overlays; # apply overlays
+      nixpkgs.config.allowUnfree = true; # allow unfree packages.
+    }
 
-      inputs.agenix.nixosModules.default
+    inputs.agenix.nixosModules.default
 
-      machineConfig
-      {
-        networking.hostName = name;
-        environment.sessionVariables = {
-          NIX_SYSTEM_NAME = name;
-        };
-      }
+    machineConfig
+    {
+      networking.hostName = name;
+      environment.sessionVariables = {
+        NIX_SYSTEM_NAME = name;
+      };
+    }
 
-      # userOSConfig
-    ]
-    ++ optionals enableHomeManager [
-      hm-module.home-manager
-      {
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.${user} = import userHMConfig;
-        home-manager.extraSpecialArgs = specialArgs;
-      }
-    ];
+    # userOSConfig
+  ]
+  ++ optionals enableHomeManager [
+    hm-module.home-manager
+    {
+      home-manager.useGlobalPkgs = true;
+      home-manager.useUserPackages = true;
+      home-manager.users.${user} = import userHMConfig;
+      home-manager.extraSpecialArgs = specialArgs;
+    }
+  ];
 }
