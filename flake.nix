@@ -105,6 +105,7 @@
 
       nixosConfigurations = import ./flake/hosts.nix {
         inherit inputs outputs;
+        inherit (inputs) nixpkgs-unstable;
         nixpkgs = nixpkgs-stable;
       };
 

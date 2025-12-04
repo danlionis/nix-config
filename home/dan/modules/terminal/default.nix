@@ -43,7 +43,7 @@
       ];
       linuxPackages = with pkgs; [
         distrobox
-        kanidm
+        kanidm_1_7
       ];
       darwinPackages = [ ];
     in

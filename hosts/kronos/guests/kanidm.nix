@@ -16,7 +16,7 @@ in
   };
 
   services.kanidm = {
-    package = pkgs.kanidm;
+    package = pkgs.kanidm_1_7;
     enableServer = true;
     serverSettings = {
       tls_chain = config.age.secrets."kanidm_cert".path;

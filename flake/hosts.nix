@@ -2,6 +2,7 @@
 # particular architecture.
 {
   nixpkgs,
+  nixpkgs-unstable,
   inputs,
   outputs,
 }:
@@ -12,9 +13,10 @@ let
       system,
       graphical ? false,
       home-manager ? false,
+      pkgs ? nixpkgs,
     }:
     {
-      ${name} = nixpkgs.lib.nixosSystem {
+      ${name} = pkgs.lib.nixosSystem {
         inherit system;
         specialArgs = {
           inherit inputs outputs graphical;
@@ -60,5 +62,8 @@ in
   graphical = true;
   home-manager = true;
 }
-// mkNixosHost "kronos" ../hosts/kronos { system = "aarch64-linux"; }
+// mkNixosHost "kronos" ../hosts/kronos {
+  system = "aarch64-linux";
+  pkgs = nixpkgs-unstable;
+}
 // mkNixosHost "vm-aarch64" ../hosts/vm-aarch64 { system = "aarch64-linux"; }

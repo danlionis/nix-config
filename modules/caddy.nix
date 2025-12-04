@@ -10,9 +10,9 @@
     enable = true;
     package = pkgs.unstable.caddy.withPlugins {
       plugins = [
-        "github.com/caddy-dns/cloudflare@v0.2.1"
+        "github.com/caddy-dns/cloudflare@v0.2.2"
       ];
-      hash = "sha256-j+xUy8OAjEo+bdMOkQ1kVqDnEkzKGTBIbMDVL7YDwDY=";
+      hash = "sha256-ea8PC/+SlPRdEVVF/I3c1CBprlVp1nrumKM5cMwJJ3U=";
     };
     globalConfig = ''
       acme_dns cloudflare {env.CLOUDFLARE_DNS_API_TOKEN}

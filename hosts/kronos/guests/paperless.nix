@@ -1,4 +1,9 @@
-{ config, lib, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   paperlessDir = "/var/lib/paperless";
   url = config.globals.domains.paperless;
@@ -35,10 +40,15 @@ in
           services.paperless = {
             enable = true;
             address = "0.0.0.0";
+            consumptionDirIsPublic = true;
             settings = {
               PAPERLESS_OCR_LANGUAGE = "deu+eng";
               PAPERLESS_URL = "https://${url}";
-              PAPERLESS_OCR_USER_ARGS = "{\"invalidate_digital_signatures\": true}";
+              PAPERLESS_OCR_USER_ARGS = {
+                optimize = 1;
+                pdfa_image_compression = "lossless";
+                invalidate_digital_signatures = true;
+              };
             };
           };
 
@@ -61,8 +71,8 @@ in
     '';
   };
 
-  age.secrets."restic/password".file = ../../secrets/restic/password;
-  age.secrets."restic/paperless-b2-env".file = ../../secrets/restic/paperless-b2-env;
+  age.secrets."restic/password".file = ../../../secrets/restic/password;
+  age.secrets."restic/paperless-b2-env".file = ../../../secrets/restic/paperless-b2-env;
 
   services.restic.backups = {
     paperless-b2-daily = {
@@ -73,7 +83,7 @@ in
       passwordFile = config.age.secrets."restic/password".path;
 
       backupPrepareCommand = ''
-        mkdir -p ${exportDir} 
+        mkdir -p ${exportDir}
         ${paperlessDir}/paperless-manage document_exporter -d ${exportDir}
       '';
 
