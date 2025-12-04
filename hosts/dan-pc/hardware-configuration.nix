@@ -37,4 +37,10 @@
     device = "/dev/disk/by-uuid/f8100fcd-195d-470c-bce2-c1d0ef6a934b";
     fsType = "ext4";
   };
+
+  services.udev.extraRules = ''
+    # Disable Audio Interface for Sunplus FHD Camera (1bcf:28c4)
+    # This prevents 'cannot get freq' kernel errors and hides the poor quality mic.
+    SUBSYSTEM=="usb", ATTRS{idVendor}=="1bcf", ATTRS{idProduct}=="28c4", ATTR{bInterfaceClass}=="01", ATTR{authorized}="0"
+  '';
 }
