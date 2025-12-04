@@ -1,13 +1,18 @@
 {
   programs.git = {
     enable = true;
-    userName = "Dan Lionis";
+    settings = {
+      user.name = "Dan Lionis";
+    };
     ignores = [
       ".direnv"
       ".envrc"
       "result"
     ];
+  };
 
-    delta.enable = true;
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
   };
 }

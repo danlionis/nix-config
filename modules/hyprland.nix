@@ -18,17 +18,16 @@
     hypridle
     hyprlock
     hyprpaper
+    hyprpolkitagent
     hyprshot
     hyprsunset
     imagemagick
     impala
     libnotify
-    libsForQt5.polkit-kde-agent
     networkmanagerapplet
     pavucontrol
     playerctl
     pywal
-    rofi-wayland
     satty
     slurp
     sway-audio-idle-inhibit
