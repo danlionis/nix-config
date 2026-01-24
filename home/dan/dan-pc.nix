@@ -55,14 +55,15 @@
     orca-slicer
     prismlauncher
     rose-pine-hyprcursor
-    darktable
+    unstable.darktable
   ];
 
   home.pointerCursor = {
-    package = pkgs.rose-pine-hyprcursor;
-    name = "rose-pine-hyprcursor";
+    package = pkgs.rose-pine-cursor;
+    name = "BreezeX-RosePine-Linux";
 
-    size = 32;
+    size = 24;
     gtk.enable = true;
+    x11.enable = true;
   };
 }

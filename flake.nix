@@ -33,11 +33,11 @@
       url = "github:ryantm/agenix";
     };
 
-    ghostty = {
-      url = "github:ghostty-org/ghostty";
-      # inputs.nixpkgs-stable.follows = "nixpkgs";
-      # inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
-    };
+    # ghostty = {
+    #   url = "github:ghostty-org/ghostty";
+    #   # inputs.nixpkgs-stable.follows = "nixpkgs";
+    #   # inputs.nixpkgs-unstable.follows = "nixpkgs-unstable";
+    # };
 
     deploy-rs = {
       url = "github:serokell/deploy-rs";
@@ -45,7 +45,7 @@
 
     # https://github.com/NixOS/nixpkgs/issues/448779
     elephant = {
-      url = "github:abenz1267/elephant";
+      url = "github:abenz1267/elephant/v2.17.1";
     };
     walker = {
       url = "github:abenz1267/walker";
@@ -65,7 +65,7 @@
       systems,
       agenix,
       deploy-rs,
-      ghostty,
+      # ghostty,
       ...
     }@inputs:
     let

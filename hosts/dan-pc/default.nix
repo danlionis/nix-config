@@ -25,6 +25,7 @@
     ../../users/dan.nix
 
     ../../modules/hyprland.nix
+    ../../modules/niri.nix
     ../../modules/fonts.nix
     ../../modules/gaming.nix
     # ../../modules/gnome.nix
@@ -249,8 +250,8 @@
     ];
   };
 
-  programs.ssh = {
-    startAgent = true;
-    agentTimeout = "1h";
-  };
+  # programs.ssh = {
+  #   startAgent = true;
+  #   agentTimeout = "1h";
+  # };
 }

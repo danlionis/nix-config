@@ -28,16 +28,17 @@
     pavucontrol
     playerctl
     pywal
+    rose-pine-hyprcursor
     satty
     slurp
     sway-audio-idle-inhibit
     tofi
     udiskie
+    wiremix
     wl-clipboard
     wlogout
     wlsunset
-
-    unstable.wiremix
+    xorg.xrdb # to set cursor size for steam for example
   ];
 
   services.udisks2.enable = true;
