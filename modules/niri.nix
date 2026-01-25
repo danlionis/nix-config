@@ -55,6 +55,8 @@ in
     rose-pine-cursor
 
     xorg.xrdb # to set cursor size for steam for example
+
+    papirus-icon-theme
   ];
 
   services.udisks2.enable = true;
@@ -74,5 +76,4 @@ in
       };
     };
   };
-
 }

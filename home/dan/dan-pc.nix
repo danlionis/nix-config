@@ -102,4 +102,23 @@
         "audio/x-wav" = "mpv.desktop";
       };
     };
+
+  gtk = {
+    enable = true;
+    iconTheme = {
+      name = "Papirus-Dark"; # or "Papirus"
+      package = pkgs.papirus-icon-theme;
+    };
+    theme = {
+      name = "Adwaita-dark"; # Sets the dark mode for window controls
+      package = pkgs.gnome-themes-extra;
+    };
+  };
+
+  qt = {
+    enable = true;
+    platformTheme.name = "gtk"; # This bridges Qt to your GTK settings
+    style.name = "adwaita-dark";
+  };
+
 }
