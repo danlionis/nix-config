@@ -66,4 +66,40 @@
     gtk.enable = true;
     x11.enable = true;
   };
+
+  xdg.mimeApps =
+    let
+      brave = "brave-browser.desktop";
+    in
+    {
+      enable = true;
+      associations.added = {
+        "application/pdf" = [ brave ];
+        "image/png" = [ "qimgv.desktop" ];
+        "image/jpeg" = [ "qimgv.desktop" ];
+      };
+      defaultApplications = {
+        "application/pdf" = brave;
+        "text/html" = brave;
+        "x-scheme-handler/http" = brave;
+        "x-scheme-handler/https" = brave;
+        "x-scheme-handler/about" = brave;
+        "x-scheme-handler/unknown" = brave;
+
+        # --- Images ---
+        "image/png" = "qimgv.desktop";
+        "image/jpeg" = "qimgv.desktop";
+
+        # --- Video ---
+        "video/mp4" = "mpv.desktop";
+        "video/x-matroska" = "mpv.desktop"; # .mkv files
+        "video/webm" = "mpv.desktop";
+        "video/quicktime" = "mpv.desktop";
+
+        # --- Audio ---
+        "audio/mpeg" = "mpv.desktop"; # .mp3
+        "audio/flac" = "mpv.desktop";
+        "audio/x-wav" = "mpv.desktop";
+      };
+    };
 }
