@@ -37,6 +37,7 @@ in
     pavucontrol
     playerctl
     pywal
+    quickshell
     satty
     slurp
     sway-audio-idle-inhibit
