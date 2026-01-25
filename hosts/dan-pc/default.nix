@@ -217,7 +217,6 @@
 
   services.ratbagd.enable = true; # service for piper (gaming mouse)
 
-  services.blueman.enable = true;
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
@@ -249,6 +248,8 @@
       }
     ];
   };
+
+  services.devmon.enable = true;
 
   # programs.ssh = {
   #   startAgent = true;
