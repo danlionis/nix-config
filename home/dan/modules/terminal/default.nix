@@ -29,6 +29,7 @@
         nodejs
         nushell
         prettierd
+        taplo
         ripgrep
         starship
         tldr
