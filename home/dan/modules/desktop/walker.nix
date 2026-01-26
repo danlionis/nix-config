@@ -16,10 +16,10 @@ let
     "calc"
     "menus"
     "providerlist"
-    "websearch"
-    "todo"
+    # "websearch"
+    # "todo"
     "unicode"
-    "bluetooth"
+    # "bluetooth"
   ];
 in
 {
@@ -80,5 +80,4 @@ in
     };
     Install.WantedBy = [ "graphical-session.target" ];
   };
-
 }

@@ -25,7 +25,6 @@
     impala
     libnotify
     networkmanagerapplet
-    pavucontrol
     playerctl
     pywal
     rose-pine-hyprcursor

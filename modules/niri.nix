@@ -36,7 +36,6 @@ in
     impala
     libnotify
     networkmanagerapplet
-    pavucontrol
     playerctl
     pywal
     quickshell
@@ -76,4 +75,11 @@ in
       };
     };
   };
+
+  environment.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = "gtk3";
+  };
+
+  programs.dconf.enable = true;
+  services.dbus.enable = true;
 }

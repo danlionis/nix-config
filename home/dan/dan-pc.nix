@@ -105,20 +105,28 @@
 
   gtk = {
     enable = true;
+
+    theme = {
+      name = "Orchis-Yellow-Dark";
+      package = pkgs.orchis-theme;
+    };
+
     iconTheme = {
-      name = "Papirus-Dark"; # or "Papirus"
+      name = "Papirus-Dark";
       package = pkgs.papirus-icon-theme;
     };
-    theme = {
-      name = "Adwaita-dark"; # Sets the dark mode for window controls
-      package = pkgs.gnome-themes-extra;
+  };
+
+  dconf.settings = {
+    "org/gnome/desktop/interface" = {
+      color-scheme = "prefer-dark";
+      # icon-theme = "Papirus-Dark";
     };
   };
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk"; # This bridges Qt to your GTK settings
-    style.name = "adwaita-dark";
+    platformTheme.name = "gtk";
+    style.name = "Orchis-Yellow-Dark";
   };
-
 }
