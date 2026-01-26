@@ -129,4 +129,17 @@
     platformTheme.name = "gtk";
     style.name = "Orchis-Yellow-Dark";
   };
+
+  xdg.desktopEntries = {
+    "google-calendar" = {
+      name = "Google Calendar";
+      exec = "brave --app=https://calendar.google.com";
+      icon = "calendar";
+    };
+    "gemini" = {
+      name = "Gemini";
+      exec = "brave --app=https://gemini.google.com";
+      icon = "gemini";
+    };
+  };
 }
