@@ -164,6 +164,7 @@
     extensions = [
       "nngceckbapebfimnlniiiahkandclblb" # bitwarden
       "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock
+      "abocjojdmemdpiffeadpdnicnlhcndcg" # https://chromewebstore.google.com/detail/socialfocus-%E2%80%94-hide-feeds/abocjojdmemdpiffeadpdnicnlhcndcg
     ];
   };
 
