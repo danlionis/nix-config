@@ -56,6 +56,7 @@
     prismlauncher
     rose-pine-hyprcursor
     unstable.darktable
+    exiftool
   ];
 
   home.pointerCursor = {
