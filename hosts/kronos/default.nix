@@ -24,7 +24,7 @@
     ../../modules/caddy.nix
 
     ./guests/paperless.nix
-    ./guests/kanidm.nix
+    ./guests/pocket-id.nix
     ./guests/forgejo.nix
     ./guests/glance
   ];

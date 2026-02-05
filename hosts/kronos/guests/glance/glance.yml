@@ -15,16 +15,25 @@ pages:
             sites:
               - title: Git
                 url: https://git.lionis.net
-                icon: http://git.lionis.net/assets/img/logo.svg
-              - title: Kanidm
+                icon: sh:forgejo
+              - title: Pocket ID
                 url: https://auth.lionis.net
-                icon: https://auth.lionis.net/pkg/img/logo.svg
+                icon: sh:pocket-id 
               - title: Paperless
                 url: https://paper.lionis.net
-                icon: /assets/adguard-logo.png
+                icon: sh:paperless-ngx
+              - title: Dokploy
+                url: https://ares.lionis.net
+                icon: sh:dokploy
 
       - size: full
         widgets:
+          - type: search
+            search-engine: perplexity
+            bangs:
+              - title: YouTube
+                shortcut: "!yt"
+                url: https://www.youtube.com/results?search_query={QUERY}
           - type: group
             widgets:
               - type: hacker-news

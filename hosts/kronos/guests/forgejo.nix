@@ -1,5 +1,6 @@
 {
   lib,
+  pkgs,
   config,
   ...
 }:
@@ -9,6 +10,7 @@ let
 in
 {
   services.forgejo = {
+    package = pkgs.forgejo;
     enable = true;
     user = "git";
     group = "git";
@@ -33,22 +35,6 @@ in
       };
     };
   };
-
-  age.secrets.forgejo-oauth-secret = {
-    file = ../../../secrets/forgejo/oauth_secret;
-    owner = cfg.user;
-  };
-
-  # https://github.com/NixOS/nixpkgs/issues/258371
-  # systemd.services.forgejo.serviceConfig.Type = lib.mkForce "exec";
-  systemd.services.forgejo.preStart =
-    let
-      cmd = "${lib.getExe cfg.package}";
-      secret = config.age.secrets.forgejo-oauth-secret;
-    in
-    ''
-      ${cmd} admin auth add-oauth --provider=openidConnect --name=Kanidm --key=git --secret="$(tr -d '\n' < ${secret.path})" --auto-discover-url=https://${config.globals.domains.kanidm}/oauth2/openid/git/.well-known/openid-configuration || true
-    '';
 
   services.caddy = {
     virtualHosts."${domain}".extraConfig = ''
