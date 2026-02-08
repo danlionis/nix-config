@@ -18,4 +18,8 @@
       defaultNetwork.settings.dns_enabled = true;
     };
   };
+
+  networking.firewall = {
+    trustedInterfaces = [ "podman0" ];
+  };
 }

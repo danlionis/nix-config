@@ -11,4 +11,6 @@ in
   "password-hash".publicKeys = keys.dan ++ [ keys.kronos ];
 
   "pocket-id/encryption_key".publicKeys = keys.dan ++ [ keys.kronos ];
+
+  "linkding/env".publicKeys = keys.dan ++ [ keys.kronos ];
 }

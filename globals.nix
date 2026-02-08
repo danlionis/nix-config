@@ -7,6 +7,7 @@
       auth = "auth.${lionis}";
       paperless = "paper.${lionis}";
       git = "git.${lionis}";
+      linkding = "links.lionis.net";
       backup = "kronos.ts.lionis.net";
     };
   };

@@ -23,10 +23,13 @@
     ../../modules/tailscale.nix
     ../../modules/caddy.nix
 
-    ./guests/paperless.nix
-    ./guests/pocket-id.nix
+    ../../modules/podman.nix
+
     ./guests/forgejo.nix
     ./guests/glance
+    ./guests/paperless.nix
+    ./guests/pocket-id.nix
+    ./guests/linkding.nix
   ];
 
   boot.loader.grub = {
