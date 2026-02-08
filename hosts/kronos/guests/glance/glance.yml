@@ -28,6 +28,9 @@ pages:
               - title: Linkding
                 url: https://links.lionis.net
                 icon: sh:linkding
+              - title: UptimeKuma
+                url: https://status.lionis.net
+                icon: sh:uptime-kuma
 
           - type: releases
             cache: 1d
@@ -70,6 +73,26 @@ pages:
                     title: Ahmad Shadeed
                   - url: https://www.jeffgeerling.com/blog.xml
                     title: Jeff Geerling
+
+          - type: rss
+            limit: 30
+            cache: 12h
+            collapse-after: 15
+            feeds:
+              - url: https://www.spiegel.de/schlagzeilen/tops/index.rss
+                title: spiegel
+              - url: https://www.tagesschau.de/index~rss2.xml
+                title: tagesschau
+              - url: https://rss.sueddeutsche.de/rss/Topthemen
+                title: süddeutsche
+              - url: https://newsfeed.zeit.de/
+                title: zeit
+              - url: https://taz.de/!p4608;rss/
+                title: taz
+              - url: https://www.n-tv.de/politik/rss
+                title: n-tv
+              - url: https://www.faz.net/rss/aktuell
+                title: faz
 
           - type: group
             widgets:
