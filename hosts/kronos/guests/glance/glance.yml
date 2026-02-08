@@ -18,13 +18,29 @@ pages:
                 icon: sh:forgejo
               - title: Pocket ID
                 url: https://auth.lionis.net
-                icon: sh:pocket-id 
+                icon: sh:pocket-id
               - title: Paperless
                 url: https://paper.lionis.net
                 icon: sh:paperless-ngx
               - title: Dokploy
                 url: https://ares.lionis.net
                 icon: sh:dokploy
+              - title: Linkding
+                url: https://links.lionis.net
+                icon: sh:linkding
+
+          - type: releases
+            cache: 1d
+            # Without authentication the Github API allows for up to 60 requests per hour. You can create a
+            # read-only token from your Github account settings and use it here to increase the limit.
+            # token: ...
+            repositories:
+              - glanceapp/glance
+              - sissbruecker/linkding
+              - Dokploy/dokploy
+              - codeberg:forgejo/forgejo
+              - paperless-ngx/paperless-ngx
+              - pocket-id/pocket-id
 
       - size: full
         widgets:
@@ -38,6 +54,22 @@ pages:
             widgets:
               - type: hacker-news
               - type: lobsters
+              - type: rss
+                limit: 15
+                collapse-after: 7
+                cache: 12h
+                feeds:
+                  - url: https://selfh.st/rss/
+                    title: selfh.st
+                    limit: 4
+                  - url: https://ciechanow.ski/atom.xml
+                  - url: https://www.joshwcomeau.com/rss.xml
+                    title: Josh Comeau
+                  - url: https://samwho.dev/rss.xml
+                  - url: https://ishadeed.com/feed.xml
+                    title: Ahmad Shadeed
+                  - url: https://www.jeffgeerling.com/blog.xml
+                    title: Jeff Geerling
 
           - type: group
             widgets:
@@ -60,43 +92,14 @@ pages:
                 subreddit: de
                 show-thumbnails: true
 
-
-      - size: small
+  - name: Reddit
+    columns:
+      - size: full
         widgets:
-          - type: weather
-            location: München, Germany
-            units: metric # alternatively "imperial"
-            hour-format: 24h # alternatively "24h"
-            # Optionally hide the location from being displayed in the widget
-            # hide-location: true
-
-          - type: rss
-            limit: 15
-            collapse-after: 7
-            cache: 12h
-            feeds:
-              - url: https://selfh.st/rss/
-                title: selfh.st
-                limit: 4
-              - url: https://ciechanow.ski/atom.xml
-              - url: https://www.joshwcomeau.com/rss.xml
-                title: Josh Comeau
-              - url: https://samwho.dev/rss.xml
-              - url: https://ishadeed.com/feed.xml
-                title: Ahmad Shadeed
-              - url: https://www.jeffgeerling.com/blog.xml
-                title: Jeff Geerling
-
-          - type: releases
-            cache: 1d
-            # Without authentication the Github API allows for up to 60 requests per hour. You can create a
-            # read-only token from your Github account settings and use it here to increase the limit.
-            # token: ...
-            repositories:
-              - glanceapp/glance
-              - go-gitea/gitea
-              - immich-app/immich
-              - syncthing/syncthing
+          - type: reddit
+            subreddit: selfhosted
+            show-thumbnails: true
+            style: horizontal-cards
 
   - name: Markets
     columns:
@@ -145,7 +148,6 @@ pages:
               - symbol: ETH-USD
                 name: Ethereum
 
-
       - size: full
         widgets:
           - type: rss
@@ -188,7 +190,6 @@ pages:
                 title: Financial Times
               - url: https://feeds.a.dj.com/rss/RSSMarketsMain.xml
                 title: Wall Street Journal
-
 
   #     - size: small
   #       widgets:
