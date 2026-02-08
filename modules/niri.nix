@@ -30,6 +30,7 @@ in
     hypridle
     hyprlock
     hyprpaper
+    hyprpicker
     hyprpolkitagent
     hyprshot
     imagemagick
