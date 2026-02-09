@@ -30,6 +30,7 @@
     ./guests/paperless.nix
     ./guests/pocket-id.nix
     ./guests/linkding.nix
+    ./guests/actualbudget.nix
   ];
 
   boot.loader.grub = {

@@ -31,6 +31,9 @@ pages:
               - title: UptimeKuma
                 url: https://status.lionis.net
                 icon: sh:uptime-kuma
+              - title: Actual Budget
+                url: https://budget.lionis.net
+                icon: sh:actual-budget
 
           - type: releases
             cache: 1d

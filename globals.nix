@@ -9,6 +9,7 @@
       git = "git.${lionis}";
       linkding = "links.lionis.net";
       backup = "kronos.ts.lionis.net";
+      actualbudget = "budget.${lionis}";
     };
   };
 }
