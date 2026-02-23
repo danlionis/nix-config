@@ -36,6 +36,7 @@
         "${config.users.users.dan.home}/uni"
         "${config.users.users.dan.home}/.config"
         "${config.users.users.dan.home}/.ssh/config"
+        "${config.users.users.dan.home}/.local/share/Anki2"
       ];
 
       pruneOpts = [

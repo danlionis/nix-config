@@ -54,6 +54,9 @@ in
     unstable.xwayland-satellite
     rose-pine-cursor
 
+    gsettings-desktop-schemas
+    glib
+    gtk3
     xorg.xrdb # to set cursor size for steam for example
 
     papirus-icon-theme
@@ -77,10 +80,29 @@ in
     };
   };
 
-  environment.sessionVariables = {
-    QT_QPA_PLATFORMTHEME = "gtk3";
+  programs.dconf.enable = true;
+  services.dbus = {
+    enable = true;
+    packages = [
+      pkgs.gsettings-desktop-schemas
+      pkgs.glib
+      pkgs.gtk3
+    ];
   };
 
-  programs.dconf.enable = true;
-  services.dbus.enable = true;
+  environment.sessionVariables = {
+    QT_QPA_PLATFORMTHEME = "gtk3";
+    # GSETTINGS_SCHEMA_DIR = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}/glib-2.0/schemas";
+  };
+
+  xdg = {
+    autostart.enable = true;
+    portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+  };
 }

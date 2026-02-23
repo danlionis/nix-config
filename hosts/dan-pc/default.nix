@@ -96,17 +96,6 @@
   #   xkbVariant = "";
   # };
 
-  xdg = {
-    autostart.enable = true;
-    portal = {
-      enable = true;
-      extraPortals = [
-        pkgs.xdg-desktop-portal
-        pkgs.xdg-desktop-portal-gtk
-      ];
-    };
-  };
-
   # Configure console keymap
   console.keyMap = "us";
 
@@ -135,8 +124,10 @@
     python3
     ruff
 
+    # (anki.override { buildInputs = [ wrapGAppsHook ]; }) # Or system-wide
+    unstable.anki
+
     # gui / desktop
-    anki
     brave
     brightnessctl
     firefox
