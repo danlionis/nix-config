@@ -19,6 +19,7 @@
         fd
         file
         fzf
+        fzf-preview
         gdu
         gemini-cli
         jq
