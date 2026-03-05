@@ -24,7 +24,7 @@ pages:
                 icon: sh:paperless-ngx
               - title: Dokploy
                 url: https://ares.lionis.net
-                icon: sh:dokploy
+                icon: sh:dokploy-light
               - title: Linkding
                 url: https://links.lionis.net
                 icon: sh:linkding
