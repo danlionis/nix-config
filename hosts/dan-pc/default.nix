@@ -41,6 +41,8 @@
     ../../modules/yubikey.nix
     ../../modules/localsend.nix
 
+    ../../modules/japanese.nix
+
     ./guests/ollama.nix
   ];
 
@@ -156,6 +158,9 @@
       "nngceckbapebfimnlniiiahkandclblb" # bitwarden
       "mnjggcdmjocbbbhaepdhchncahnbgone" # sponsorblock
       "abocjojdmemdpiffeadpdnicnlhcndcg" # https://chromewebstore.google.com/detail/socialfocus-%E2%80%94-hide-feeds/abocjojdmemdpiffeadpdnicnlhcndcg
+      "likgccmbimhjbgkjambclfkhldnlhbnn" # "https://chromewebstore.google.com/detail/yomitan-popup-dictionary/likgccmbimhjbgkjambclfkhldnlhbnn"
+      "ffekmfclcdnahgaeagcmdcnbgkcjhfld" # https://chromewebstore.google.com/detail/stereotomono/ffekmfclcdnahgaeagcmdcnbgkcjhfld
+      "hoombieeljmmljlkjmnheibnpciblicm" # https://chromewebstore.google.com/detail/language-reactor/hoombieeljmmljlkjmnheibnpciblicm
     ];
   };
 

@@ -30,6 +30,7 @@ in
     [
       noto-fonts
       comic-relief
+      noto-fonts-color-emoji
       (my-google-fonts.override {
         fonts = [
           "SUSE"
