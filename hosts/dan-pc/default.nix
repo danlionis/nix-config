@@ -149,6 +149,8 @@
 
     rocmPackages.rocm-smi
 
+    (callPackage ../../packages/whispertube { })
+
     # inputs.ghostty.packages.x86_64-linux.default
   ];
 
