@@ -43,4 +43,21 @@
     # This prevents 'cannot get freq' kernel errors and hides the poor quality mic.
     SUBSYSTEM=="usb", ATTRS{idVendor}=="1bcf", ATTRS{idProduct}=="28c4", ATTR{bInterfaceClass}=="01", ATTR{authorized}="0"
   '';
+
+  systemd.tmpfiles.rules =
+    let
+      rocmEnv = pkgs.symlinkJoin {
+        name = "rocm-combined";
+        paths = with pkgs.rocmPackages; [
+          rocblas
+          hipblas
+          clr
+        ];
+      };
+    in
+    [
+      "L+    /opt/rocm   -    -    -     -    ${rocmEnv}"
+    ];
+
+  hardware.amdgpu.opencl.enable = true;
 }

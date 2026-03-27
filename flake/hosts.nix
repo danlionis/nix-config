@@ -61,6 +61,7 @@ in
   system = "x86_64-linux";
   graphical = true;
   home-manager = true;
+  pkgs = nixpkgs-unstable;
 }
 // mkNixosHost "kronos" ../hosts/kronos {
   system = "aarch64-linux";

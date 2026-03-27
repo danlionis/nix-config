@@ -2,7 +2,8 @@
 {
   services.ollama = {
     enable = true;
-    acceleration = "rocm";
+    package = pkgs.ollama-rocm;
+    # acceleration = "rocm";
     rocmOverrideGfx = "11.0.1";
   };
 

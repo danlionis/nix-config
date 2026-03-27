@@ -74,7 +74,7 @@
     in
     {
 
-      overlays = import ./pkgs { inherit inputs outputs; };
+      overlays = import ./overlays { inherit inputs outputs; };
 
       devShells = forAllSystems (
         system:
