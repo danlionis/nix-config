@@ -19,7 +19,17 @@
     ./modules/development/latex.nix
 
     ./modules/desktop/walker.nix
+
+    ./modules/yomitan
   ];
+
+  services.yomitan = {
+    enableApi = true;
+    enableMecab = true;
+
+    braveApiIntegration = true;
+    braveMecabIntegration = true;
+  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -127,8 +137,9 @@
 
   qt = {
     enable = true;
-    platformTheme.name = "gtk";
-    style.name = "Orchis-Yellow-Dark";
+    platformTheme.name = "gtk3";
+    style.name = "adwaita";
+    # style.name = "Orchis-Yellow-Dark";
   };
 
   xdg.desktopEntries = {
