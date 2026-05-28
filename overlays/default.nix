@@ -20,6 +20,8 @@
     # rose-pine-hyprcursor = prev.callPackage ./../packages/rose-pine-hyprcursor { };
   };
 
+  # whisperx = import ./whisperx/overlay.nix;
+
   # https://discourse.nixos.org/t/use-unstable-version-for-some-packages/32880
   unstable-packages = final: _prev: {
     unstable = import inputs.nixpkgs-unstable {

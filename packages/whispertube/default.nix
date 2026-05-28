@@ -2,7 +2,7 @@
   pkgs,
   defaultOutputDir ? "$HOME/Downloads/subtitles",
   defaultModelDir ? "$HOME/.cache/whisper-models",
-  model ? "large-v3",
+  model ? "large-v3-turbo",
 }:
 
 pkgs.writeShellApplication rec {
@@ -54,7 +54,7 @@ pkgs.writeShellApplication rec {
     cd "$WORK_DIR"
 
     echo "downloading audio..."
-    TITLE=$(yt-dlp --get-title "$1")
+    TITLE=$(yt-dlp --print filename -o "%(title)s" "$1")
     RAW_WAV="audio_raw.wav"
 
     # yt-dlp -x --audio-format wav --audio-quality 0 -o "$RAW_WAV" "$1"
