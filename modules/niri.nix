@@ -57,7 +57,7 @@ in
     gsettings-desktop-schemas
     glib
     gtk3
-    xorg.xrdb # to set cursor size for steam for example
+    xrdb # to set cursor size for steam for example
 
     papirus-icon-theme
   ];
@@ -92,8 +92,11 @@ in
 
   environment.sessionVariables = {
     QT_QPA_PLATFORM = "wayland";
+    QT_STYLE_OVERRIDE = "Adwaita-Dark";
     # GSETTINGS_SCHEMA_DIR = "${pkgs.gsettings-desktop-schemas}/share/gsettings-schemas/${pkgs.gsettings-desktop-schemas.name}/glib-2.0/schemas";
   };
+
+  qt.style = "adwaita-dark";
 
   xdg = {
     autostart.enable = true;

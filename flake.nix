@@ -91,7 +91,7 @@
 
                 nixd
                 nixfmt-rfc-style
-                nodePackages.typescript-language-server
+                typescript-language-server
 
                 pyright
               ]

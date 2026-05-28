@@ -21,7 +21,7 @@ in
     shfmt
     starship
 
-    nodePackages.bash-language-server
+    bash-language-server
   ];
 
   environment.variables = {

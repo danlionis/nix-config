@@ -29,7 +29,7 @@
     ../../modules/fonts.nix
     ../../modules/gaming.nix
     # ../../modules/gnome.nix
-    ../../modules/libvirt.nix
+    # ../../modules/libvirt.nix
     ../../modules/openrgb.nix
     ../../modules/podman.nix
     ../../modules/docker.nix
@@ -162,7 +162,7 @@
       "abocjojdmemdpiffeadpdnicnlhcndcg" # https://chromewebstore.google.com/detail/socialfocus-%E2%80%94-hide-feeds/abocjojdmemdpiffeadpdnicnlhcndcg
       "likgccmbimhjbgkjambclfkhldnlhbnn" # "https://chromewebstore.google.com/detail/yomitan-popup-dictionary/likgccmbimhjbgkjambclfkhldnlhbnn"
       "ffekmfclcdnahgaeagcmdcnbgkcjhfld" # https://chromewebstore.google.com/detail/stereotomono/ffekmfclcdnahgaeagcmdcnbgkcjhfld
-      "hoombieeljmmljlkjmnheibnpciblicm" # https://chromewebstore.google.com/detail/language-reactor/hoombieeljmmljlkjmnheibnpciblicm
+      # "hoombieeljmmljlkjmnheibnpciblicm" # https://chromewebstore.google.com/detail/language-reactor/hoombieeljmmljlkjmnheibnpciblicm
     ];
   };
 

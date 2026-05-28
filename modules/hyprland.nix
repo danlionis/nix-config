@@ -37,10 +37,21 @@
     wl-clipboard
     wlogout
     wlsunset
-    xorg.xrdb # to set cursor size for steam for example
+    xrdb # to set cursor size for steam for example
   ];
 
   services.udisks2.enable = true;
 
   environment.sessionVariables.NIXOS_OZONE_WL = "1";
+
+  xdg = {
+    autostart.enable = true;
+    portal = {
+      enable = true;
+      extraPortals = [
+        pkgs.xdg-desktop-portal
+        pkgs.xdg-desktop-portal-gtk
+      ];
+    };
+  };
 }
