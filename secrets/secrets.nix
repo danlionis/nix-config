@@ -15,4 +15,5 @@ in
   "linkding/env".publicKeys = keys.dan ++ [ keys.kronos ];
 
   "beszel/kronos".publicKeys = keys.dan ++ [ keys.kronos ];
+  "beszel/dan-pc".publicKeys = [ keys.dan-pc ];
 }

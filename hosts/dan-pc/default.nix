@@ -44,6 +44,7 @@
     ../../modules/japanese.nix
 
     ./guests/ollama.nix
+    ./guests/beszel-agent.nix
   ];
 
   # Bootloader.

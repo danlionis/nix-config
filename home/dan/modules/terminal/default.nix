@@ -42,6 +42,7 @@
         yt-dlp
         zip
         zoxide
+        neovim
       ];
       linuxPackages = with pkgs; [
         distrobox
@@ -52,12 +53,12 @@
     ++ lib.optionals pkgs.stdenv.isLinux linuxPackages
     ++ lib.optionals pkgs.stdenv.isDarwin darwinPackages;
 
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    package = pkgs.unstable.neovim-unwrapped;
-    withRuby = true;
-    withPython3 = true;
-  };
-
+  # programs.neovim = {
+  #   enable = true;
+  #   defaultEditor = true;
+  #   package = pkgs.unstable.neovim-unwrapped;
+  #   withRuby = true;
+  #   withPython3 = true;
+  # };
+  #
 }
