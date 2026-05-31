@@ -10,6 +10,7 @@
       linkding = "links.lionis.net";
       backup = "kronos.ts.lionis.net";
       actualbudget = "budget.${lionis}";
+      beszel = "beszel.${lionis}";
     };
   };
 }
