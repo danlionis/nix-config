@@ -1,17 +1,5 @@
-{ config, pkgs, ... }:
-let
-  domain = config.globals.domains.beszel;
-  cfg = config.services.beszel.hub;
-in
+{ config, ... }:
 {
-  services.beszel.hub.enable = true;
-
-  services.caddy = {
-    virtualHosts."${domain}".extraConfig = ''
-      reverse_proxy http://localhost:${toString cfg.port}
-    '';
-  };
-
   age.secrets = {
     "beszel/kronos" = {
       file = ../../../secrets/beszel/kronos;

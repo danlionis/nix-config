@@ -31,7 +31,9 @@
     ./guests/pocket-id.nix
     ./guests/linkding.nix
     ./guests/actualbudget.nix
-    ./guests/beszel.nix
+
+    ./guests/beszel-hub.nix
+    ./guests/beszel-agent.nix
   ];
 
   boot.loader.grub = {
