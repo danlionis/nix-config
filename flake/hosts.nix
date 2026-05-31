@@ -61,10 +61,10 @@ in
   system = "x86_64-linux";
   graphical = true;
   home-manager = true;
-  pkgs = nixpkgs-unstable;
+  pkgs = nixpkgs;
 }
 // mkNixosHost "kronos" ../hosts/kronos {
   system = "aarch64-linux";
-  pkgs = nixpkgs-unstable;
+  pkgs = nixpkgs;
 }
 // mkNixosHost "vm-aarch64" ../hosts/vm-aarch64 { system = "aarch64-linux"; }

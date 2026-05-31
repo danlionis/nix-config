@@ -56,6 +56,8 @@
     enable = true;
     defaultEditor = true;
     package = pkgs.unstable.neovim-unwrapped;
+    withRuby = true;
+    withPython3 = true;
   };
 
 }

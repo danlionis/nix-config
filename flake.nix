@@ -3,13 +3,11 @@
 
   inputs = {
     # Nixpkgs
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-25.11";
+    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-26.05";
     # nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     nixos-hardware.url = "github:NixOS/nixos-hardware/master";
-
-    ags.url = "github:Aylur/ags/v1"; # WARNING: migrate to v2, please do so soon...
 
     impermanence.url = "github:nix-community/impermanence";
     disko = {
@@ -18,7 +16,7 @@
 
     # # Home manager
     home-manager = {
-      url = "github:nix-community/home-manager/release-25.11";
+      url = "github:nix-community/home-manager/release-26.05";
       inputs.nixpkgs.follows = "nixpkgs-stable";
     };
 
@@ -90,7 +88,7 @@
                 stylua
 
                 nixd
-                nixfmt-rfc-style
+                nixfmt
                 typescript-language-server
 
                 pyright

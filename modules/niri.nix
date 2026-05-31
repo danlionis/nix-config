@@ -38,7 +38,6 @@ in
     libnotify
     networkmanagerapplet
     playerctl
-    pywal
     quickshell
     satty
     slurp

@@ -4,11 +4,9 @@
     enable = true;
     withUWSM = true;
     xwayland.enable = true;
-    # package = pkgs.unstable.hyprland;
   };
 
   environment.systemPackages = with pkgs; [
-    inputs.ags.packages."x86_64-linux".ags # https://github.com/NixOS/nixpkgs/issues/306446
     adw-gtk3
 
     brightnessctl

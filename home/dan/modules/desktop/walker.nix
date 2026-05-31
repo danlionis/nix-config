@@ -5,8 +5,8 @@
   ...
 }:
 let
-  elephant = inputs.elephant.packages.${pkgs.stdenv.system}.elephant-with-providers;
-  walker = inputs.walker.packages.${pkgs.stdenv.system}.walker;
+  elephant = inputs.elephant.packages.${pkgs.stdenv.hostPlatform.system}.elephant-with-providers;
+  walker = inputs.walker.packages.${pkgs.stdenv.hostPlatform.system}.walker;
   providers = [
     "desktopapplications"
     "files"
