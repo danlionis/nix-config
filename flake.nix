@@ -42,13 +42,13 @@
     };
 
     # https://github.com/NixOS/nixpkgs/issues/448779
-    elephant = {
-      url = "github:abenz1267/elephant/v2.17.1";
-    };
-    walker = {
-      url = "github:abenz1267/walker";
-      inputs.elephant.follows = "elephant";
-    };
+    # elephant = {
+    #   url = "github:abenz1267/elephant/v2.17.1";
+    # };
+    # walker = {
+    #   url = "github:abenz1267/walker";
+    #   inputs.elephant.follows = "elephant";
+    # };
 
   };
 

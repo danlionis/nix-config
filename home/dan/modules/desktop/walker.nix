@@ -5,8 +5,8 @@
   ...
 }:
 let
-  elephant = inputs.elephant.packages.${pkgs.stdenv.hostPlatform.system}.elephant-with-providers;
-  walker = inputs.walker.packages.${pkgs.stdenv.hostPlatform.system}.walker;
+  # elephant = inputs.elephant.packages.${pkgs.stdenv.hostPlatform.system}.elephant-with-providers;
+  # walker = inputs.walker.packages.${pkgs.stdenv.hostPlatform.system}.walker;
   providers = [
     "desktopapplications"
     "files"
@@ -24,7 +24,7 @@ let
 in
 {
   # i want to configure the dotfiles in the dotfiles repo, so we dont enable the modules but only start the services
-  home.packages = [
+  home.packages = with pkgs; [
     elephant
     walker
   ];
@@ -39,7 +39,7 @@ in
 
     Service = {
       Type = "simple";
-      ExecStart = "${elephant}/bin/elephant";
+      ExecStart = "${pkgs.elephant}/bin/elephant";
       Restart = "on-failure";
       RestartSec = 1;
 
@@ -58,7 +58,7 @@ in
       map (
         provider:
         lib.nameValuePair "elephant/providers/${provider}.so" {
-          source = "${elephant}/lib/elephant/providers/${provider}.so";
+          source = "${pkgs.elephant}/lib/elephant/providers/${provider}.so";
         }
       ) providers
     );
@@ -75,7 +75,7 @@ in
       PartOf = [ "graphical-session.target" ];
     };
     Service = {
-      ExecStart = "${walker}/bin/walker --gapplication-service";
+      ExecStart = "${pkgs.walker}/bin/walker --gapplication-service";
       Restart = "on-failure";
     };
     Install.WantedBy = [ "graphical-session.target" ];
