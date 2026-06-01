@@ -13,10 +13,7 @@
     # ./modules/dotpersist-service.nix
     ./modules/openrgb-service.nix
 
-    ./modules/development/nix.nix
-    ./modules/development/python.nix
-    ./modules/development/lua.nix
-    ./modules/development/latex.nix
+    ./modules/dev.nix
 
     ./modules/desktop/walker.nix
 
@@ -57,7 +54,7 @@
   #  /etc/profiles/per-user/dan/etc/profile.d/hm-session-vars.sh
   #
   home.sessionVariables = {
-    # EDITOR = "emacs";
+    EDITOR = "nvim";
   };
 
   home.packages = with pkgs; [
