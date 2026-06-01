@@ -34,6 +34,9 @@ pages:
               - title: Actual Budget
                 url: https://budget.lionis.net
                 icon: sh:actual-budget
+              - title: Beszel
+                url: https://beszel.lionis.net
+                icon: sh:beszel
 
           - type: releases
             cache: 1d
