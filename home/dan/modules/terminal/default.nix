@@ -21,7 +21,7 @@
         fzf
         fzf-preview
         gdu
-        gemini-cli
+        unstable.antigravity-cli
         jq
         lazygit
         man-pages
