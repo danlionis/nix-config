@@ -6,7 +6,7 @@
 }:
 let
   ifTheyExist = groups: builtins.filter (group: builtins.hasAttr group config.users.groups) groups;
-  keys = (import ../keys.nix).dan;
+  keys = (import ../keys.nix).users;
 in
 {
   age.secrets."password-hash".file = ../secrets/password-hash;
