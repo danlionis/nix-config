@@ -17,6 +17,8 @@
     ./disko.nix
     ./hardware-configuration.nix
 
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x1-13th-gen
+
     inputs.disko.nixosModules.default
 
     ../../users/dan.nix
@@ -33,7 +35,7 @@
     # ../../modules/yubikey.nix
     # ../../modules/localsend.nix
 
-    # ./guests/beszel-agent.nix
+    ./guests/beszel-agent.nix
   ];
 
   users.users.dan.name = "lionis";
@@ -104,7 +106,7 @@
     gnumake
 
     # (anki.override { buildInputs = [ wrapGAppsHook ]; }) # Or system-wide
-    unstable.anki
+    # unstable.anki
 
     # gui / desktop
     brave
@@ -113,10 +115,8 @@
     kitty
     libreoffice
     obsidian
-    piper
     ungoogled-chromium
     zotero
-    inkscape
 
     # other
     openssl

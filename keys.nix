@@ -8,10 +8,12 @@ rec {
 
   backup = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIBv9iHztDz+28HUUBcwGPugwPAjuNtcXQOy+MzgNx2/x";
 
-  work-host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKRYMStjBWF3OHwYmsxom2k0zccaaJordvB0tm9Tl/dk";
+  work-user = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAINXOhKDErZLoBH52A5xOLZwubxA5PTVcOuoKlyUoDvSQ";
+  work-host = "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIDTx9e0NlwJrQEtSlnJ5Uhe1MgKlBFbLXb1fL4uNX9Hb";
 
   users = [
     dan-pc-user
+    work-user
   ];
 
   dan-pc = [
@@ -20,6 +22,7 @@ rec {
   ];
 
   work = [
+    work-user
     work-host
   ];
 
