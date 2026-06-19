@@ -16,7 +16,12 @@ name: modulePath:
   value = pkgs.lib.nixosSystem {
     inherit system;
     specialArgs = {
-      inherit inputs outputs graphical;
+      inherit
+        inputs
+        outputs
+        graphical
+        unfree
+        ;
     };
     modules = [
       {

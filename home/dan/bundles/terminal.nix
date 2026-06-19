@@ -1,4 +1,9 @@
-{ pkgs, lib, ... }:
+{
+  pkgs,
+  lib,
+  config,
+  ...
+}:
 {
   home.packages =
     let
@@ -16,7 +21,6 @@
         fzf
         fzf-preview
         gdu
-        unstable.antigravity-cli
         jq
         lazygit
         man-pages
@@ -42,9 +46,13 @@
         distrobox
       ];
       darwinPackages = [ ];
+      unfreePackages = with pkgs; [
+        unstable.antigravity-cli
+      ];
     in
     commonPackages
     ++ lib.optionals pkgs.stdenv.isLinux linuxPackages
+    ++ lib.optionals (pkgs.config.allowUnfree or false) unfreePackages
     ++ lib.optionals pkgs.stdenv.isDarwin darwinPackages;
 
   programs = {
