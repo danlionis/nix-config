@@ -33,6 +33,6 @@ builtins.listToAttrs [
     system = "x86_64-linux";
     graphical = true;
     home-manager = true;
-    unfree = false;
+    unfree = true;
   })
 ]
