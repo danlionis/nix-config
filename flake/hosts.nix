@@ -28,4 +28,11 @@ builtins.listToAttrs [
   (mkNixosHost "vm-aarch64" ../hosts/vm-aarch64 {
     system = "aarch64-linux";
   })
+
+  (mkNixosHost "work" ../hosts/work {
+    system = "x86_64-linux";
+    graphical = true;
+    home-manager = true;
+    unfree = false;
+  })
 ]

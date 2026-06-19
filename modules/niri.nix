@@ -2,7 +2,6 @@
   pkgs,
   lib,
   config,
-  inputs,
   ...
 }:
 let
@@ -18,9 +17,6 @@ in
   };
 
   environment.systemPackages = with pkgs; [
-    # inputs.ags.packages."x86_64-linux".ags # https://github.com/NixOS/nixpkgs/issues/306446
-    # adw-gtk3
-
     bashmount
     bluetui
     brightnessctl
@@ -36,13 +32,13 @@ in
     imagemagick
     impala
     libnotify
+    nautilus
     networkmanagerapplet
     playerctl
     quickshell
     satty
     slurp
     sway-audio-idle-inhibit
-    tofi
     udiskie
     wiremix
     wl-clipboard
@@ -59,6 +55,8 @@ in
     xrdb # to set cursor size for steam for example
 
     papirus-icon-theme
+
+    adwaita-qt
   ];
 
   services.udisks2.enable = true;
@@ -104,6 +102,7 @@ in
       extraPortals = [
         pkgs.xdg-desktop-portal
         pkgs.xdg-desktop-portal-gtk
+        pkgs.gnome-keyring
       ];
     };
   };
