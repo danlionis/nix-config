@@ -15,9 +15,9 @@
   imports = [
     # Include the results of the hardware scan.
     ./disko.nix
+    ./hardware-configuration.nix
 
     inputs.disko.nixosModules.default
-    inputs.impermanence.nixosModules.impermanence
 
     ../../users/dan.nix
 
