@@ -3,30 +3,17 @@
 {
 
   imports = [
-    ./modules/global
+    ./common.nix
 
-    ./modules/desktop/gnome.nix
-    ./modules/desktop/media.nix
+    ./bundles/terminal.nix
+    ./bundles/dev.nix
 
-    ./modules/terminal
+    ./services/openrgb-service.nix
 
-    # ./modules/dotpersist-service.nix
-    ./modules/openrgb-service.nix
+    ./desktop/walker.nix
 
-    ./modules/dev.nix
-
-    ./modules/desktop/walker.nix
-
-    ./modules/yomitan
+    ./services/yomitan
   ];
-
-  services.yomitan = {
-    enableApi = true;
-    enableMecab = true;
-
-    braveApiIntegration = true;
-    braveMecabIntegration = true;
-  };
 
   # This value determines the Home Manager release that your configuration is
   # compatible with. This helps avoid breakage when a new Home Manager release
@@ -63,7 +50,12 @@
     prismlauncher
     rose-pine-hyprcursor
     unstable.darktable
-    exiftool
+
+    # media
+    mpv
+    qimgv
+    kdePackages.okular
+    vlc
   ];
 
   home.pointerCursor = {

@@ -1,7 +1,16 @@
-{ config, pkgs, lib, ... }: {
+{
+  config,
+  pkgs,
+  lib,
+  ...
+}:
+{
   nix = {
     settings = {
-      experimental-features = [ "nix-command" "flakes" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
       warn-dirty = false;
     };
   };
@@ -16,8 +25,8 @@
     homeDirectory =
       if pkgs.stdenv.isDarwin then "/Users/${config.home.username}" else "/home/${config.home.username}";
     sessionVariables = {
-      FLAKE = "$HOME/dotfiles";
+      FLAKE = "$HOME/nix-config";
     };
     packages = [ ];
   };
-} 
+}

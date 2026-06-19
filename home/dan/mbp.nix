@@ -3,9 +3,9 @@
 {
 
   imports = [
-    ./modules/global
-    ./modules/terminal
-    ./modules/development/nix.nix
+    ./common.nix
+    ./bundles/terminal.nix
+    ./bundles/dev.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
@@ -38,7 +38,5 @@
   };
 
   home.packages = with pkgs; [
-    pyright
-    ruff
   ];
 }

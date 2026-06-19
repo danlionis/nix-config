@@ -3,12 +3,11 @@
 {
 
   imports = [
-    ./modules/global
+    ./common.nix
 
-    ./modules/terminal
+    ./bundles/terminal.nix
 
-    ./modules/development/nix.nix
-    ./modules/development/python.nix
+    ./bundles/dev.nix
   ];
 
   # This value determines the Home Manager release that your configuration is
