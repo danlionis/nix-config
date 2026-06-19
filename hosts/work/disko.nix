@@ -3,7 +3,7 @@
     disk = {
       main = {
         type = "disk";
-        device = "/dev/<placeholder>";
+        device = "/dev/nvme0n1";
         content = {
           type = "gpt";
           partitions = {
