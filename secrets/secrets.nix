@@ -15,6 +15,6 @@ in
   "linkding/env".publicKeys = keys.users ++ [ keys.kronos ];
 
   "beszel/kronos".publicKeys = keys.users ++ [ keys.kronos ];
-  "beszel/dan-pc".publicKeys = keys.dan-pc;
-  "beszel/work".publicKeys = keys.work;
+  "beszel/dan-pc".publicKeys = keys.users;
+  "beszel/work".publicKeys = keys.users;
 }
