@@ -142,4 +142,6 @@
       icon = "gemini";
     };
   };
+
+  services.hyprpolkitagent.enable = true;
 }
