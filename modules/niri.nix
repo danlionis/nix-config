@@ -31,6 +31,7 @@ in
     hyprshot
     imagemagick
     impala
+    kanshi
     libnotify
     nautilus
     networkmanagerapplet
