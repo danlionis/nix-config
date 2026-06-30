@@ -48,18 +48,29 @@
   # kernel version
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
-  networking.wireless.enable = true; # Enables wireless support via wpa_supplicant.
-
   # Configure network proxy if necessary
   # networking.proxy.default = "http://user:password@proxy:port/";
   # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
 
   # Enable networking
-  networking.networkmanager.enable = true;
-  systemd.services.NetworkManager-wait-online.enable = false; # https://discourse.nixos.org/t/nixos-rebuild-switch-upgrade-networkmanager-wait-online-service-failure/30746
   # networking.networkmanager.dns = "none";
   # networking.nameservers = [ "127.0.0.1" "::1" ];
   # networking.dhcpcd.extraConfig = "nohook resolv.conf";
+
+  networking.networkmanager.enable = true;
+  networking.networkmanager.wifi.backend = "iwd";
+  networking.wireless.enable = false; # Disables wireless support via wpa_supplicant.
+  networking.wireless.iwd = {
+    enable = true;
+    settings = {
+      Network = {
+        EnableIPv6 = true;
+      };
+      Settings = {
+        AutoConnect = true;
+      };
+    };
+  };
 
   # https://nixos.wiki/wiki/WireGuard#Setting_up_WireGuard_with_NetworkManager
   # networking.firewall.checkReversePath = "loose";
@@ -210,4 +221,34 @@
   #   startAgent = true;
   #   agentTimeout = "1h";
   # };
+
+  services.thermald.enable = true;
+
+  services.auto-cpufreq = {
+    enable = true;
+    settings = {
+      battery = {
+        governor = "powersave";
+        turbo = "never";
+      };
+      charger = {
+        governor = "performance";
+        turbo = "auto";
+      };
+    };
+  };
+
+  services.fprintd.enable = true;
+  security.pam.services.sudo.fprintAuth = true;
+
+  # Hardware-specific support for Intel MIPI / IPU6 cameras
+  hardware.ipu6 = {
+    enable = true;
+    # Uses the specific platform pipeline for Lunar Lake / Arrow Lake (Gen 13)
+    platform = "ipu6epmtl";
+  };
+
+  # Ensure v4l2loopback is available if you need to mirror it into standard apps
+  boot.extraModulePackages = [ config.boot.kernelPackages.v4l2loopback ];
+  boot.kernelModules = [ "v4l2loopback" ];
 }

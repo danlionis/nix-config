@@ -41,6 +41,10 @@
       url = "github:serokell/deploy-rs";
     };
 
+    wlctl = {
+      url = "github:aashish-thapa/wlctl";
+    };
+
     # https://github.com/NixOS/nixpkgs/issues/448779
     # elephant = {
     #   url = "github:abenz1267/elephant/v2.17.1";

@@ -2,6 +2,7 @@
   pkgs,
   lib,
   config,
+  inputs,
   ...
 }:
 let
@@ -30,7 +31,6 @@ in
     hyprpolkitagent
     hyprshot
     imagemagick
-    impala
     kanshi
     libnotify
     nautilus
@@ -58,6 +58,8 @@ in
     papirus-icon-theme
 
     adwaita-qt
+
+    inputs.wlctl.packages.${pkgs.stdenv.hostPlatform.system}.default
   ];
 
   services.udisks2.enable = true;
