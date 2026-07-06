@@ -144,4 +144,6 @@
   };
 
   services.hyprpolkitagent.enable = true;
+
+  services.kanshi.enable = true;
 }
