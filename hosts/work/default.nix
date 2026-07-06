@@ -257,4 +257,6 @@
     HandleLidSwitchExternalPower = "lock";
     HandleLidSwitchDocked = "ignore";
   };
+
+  services.hardware.bolt.enable = true;
 }
