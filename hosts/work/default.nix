@@ -25,7 +25,7 @@
 
     ../../modules/niri.nix
     ../../modules/fonts.nix
-    # ../../modules/podman.nix
+    ../../modules/podman.nix
     # ../../modules/docker.nix
     # ../../modules/printing.nix
     ../../modules/sound.nix
@@ -134,6 +134,8 @@
     pkg-config
     chezmoi
     jc
+    rclone
+    rsync
   ];
 
   programs.chromium = {
@@ -203,6 +205,10 @@
   hardware.graphics = {
     enable = true;
     enable32Bit = true;
+    extraPackages = with pkgs; [
+      intel-media-driver
+      vpl-gpu-rt
+    ];
   };
 
   services.openssh = {
@@ -240,6 +246,8 @@
 
   services.fprintd.enable = true;
   security.pam.services.sudo.fprintAuth = true;
+  security.pam.services.login.fprintAuth = false;
+  security.pam.services.login.enableGnomeKeyring = true;
 
   # Hardware-specific support for Intel MIPI / IPU6 cameras
   hardware.ipu6 = {

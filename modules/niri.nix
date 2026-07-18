@@ -22,7 +22,6 @@ in
     bluetui
     brightnessctl
     clipse
-    dunst
     gum
     hypridle
     hyprlock
@@ -109,4 +108,6 @@ in
       ];
     };
   };
+
+  security.pam.services.hyprlock = { };
 }
