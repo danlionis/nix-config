@@ -145,6 +145,7 @@
     ungoogled-chromium
     zotero
     inkscape
+    gimp
 
     # other
     openssl
