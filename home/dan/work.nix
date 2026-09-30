@@ -53,6 +53,7 @@
     qimgv
     kdePackages.okular
     vlc
+    texliveFull
   ];
 
   home.pointerCursor = {
