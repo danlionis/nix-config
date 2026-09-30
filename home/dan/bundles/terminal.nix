@@ -13,6 +13,7 @@
         bitwarden-cli
         btop
         carapace
+        codex
         comma
         dig
         eza
