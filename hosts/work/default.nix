@@ -27,15 +27,17 @@
     ../../modules/fonts.nix
     ../../modules/podman.nix
     # ../../modules/docker.nix
-    # ../../modules/printing.nix
+    ../../modules/printing.nix
     ../../modules/sound.nix
     ../../modules/tailscale.nix
     ../../modules/terminal.nix
-    # ../../modules/wireshark.nix
+    ../../modules/wireshark.nix
     # ../../modules/yubikey.nix
     # ../../modules/localsend.nix
 
     ./guests/beszel-agent.nix
+
+    ../../modules/japanese.nix
   ];
 
   users.users.dan.name = "lionis";
@@ -57,20 +59,50 @@
   # networking.nameservers = [ "127.0.0.1" "::1" ];
   # networking.dhcpcd.extraConfig = "nohook resolv.conf";
 
-  networking.networkmanager.enable = true;
-  networking.networkmanager.wifi.backend = "iwd";
-  networking.wireless.enable = false; # Disables wireless support via wpa_supplicant.
-  networking.wireless.iwd = {
+  networking.networkmanager = {
     enable = true;
-    settings = {
-      Network = {
-        EnableIPv6 = true;
-      };
-      Settings = {
-        AutoConnect = true;
-      };
-    };
+
+    # settings.connection.ipv4.dad-timeout = 0;
+    # dispatcherScripts = [
+    #   {
+    #     source =
+    #       let
+    #         iface = "enp0s13f0u1u4u5";
+    #       in
+    #       pkgs.writeShellScript "work-dock-exclusive-wifi" ''
+    #         IFACE="$1"
+    #         ACTION="$2"
+    #
+    #         # Only trigger for your specific docking/work ethernet adapter
+    #         if [ "$IFACE" = "${iface}" ]; then
+    #           case "$ACTION" in
+    #             up)
+    #               ${pkgs.networkmanager}/bin/nmcli radio wifi off
+    #               ;;
+    #             down)
+    #               ${pkgs.networkmanager}/bin/nmcli radio wifi on
+    #               ;;
+    #           esac
+    #         fi
+    #       '';
+    #     type = "basic";
+    #   }
+    # ];
   };
+
+  # networking.networkmanager.wifi.backend = "wpa_supplicant";
+  # networking.wireless.enable = false; # Disables wireless support via wpa_supplicant.
+  # networking.wireless.iwd = {
+  #   enable = true;
+  #   settings = {
+  #     Network = {
+  #       EnableIPv6 = true;
+  #     };
+  #     Settings = {
+  #       AutoConnect = true;
+  #     };
+  #   };
+  # };
 
   # https://nixos.wiki/wiki/WireGuard#Setting_up_WireGuard_with_NetworkManager
   # networking.firewall.checkReversePath = "loose";
@@ -117,11 +149,12 @@
     gnumake
 
     # (anki.override { buildInputs = [ wrapGAppsHook ]; }) # Or system-wide
-    # unstable.anki
+    unstable.anki
 
     # gui / desktop
     brave
     brightnessctl
+    cheese
     firefox
     kitty
     libreoffice
@@ -267,4 +300,7 @@
   };
 
   services.hardware.bolt.enable = true;
+
+  hardware.logitech.wireless.enable = true;
+  hardware.logitech.wireless.enableGraphical = true;
 }
