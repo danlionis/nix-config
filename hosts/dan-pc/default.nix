@@ -132,7 +132,7 @@
     ruff
 
     # (anki.override { buildInputs = [ wrapGAppsHook ]; }) # Or system-wide
-    unstable.anki
+    anki
 
     # gui / desktop
     brave

@@ -49,7 +49,7 @@
     orca-slicer
     prismlauncher
     rose-pine-hyprcursor
-    unstable.darktable
+    darktable
 
     # media
     mpv
