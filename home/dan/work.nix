@@ -147,4 +147,10 @@
   services.hyprpolkitagent.enable = true;
 
   services.kanshi.enable = true;
+
+  programs.git = {
+    settings = {
+      user.email = "dan.lionis@tum.de";
+    };
+  };
 }
