@@ -42,6 +42,7 @@ in
     udiskie
     wiremix
     wl-clipboard
+    wl-mirror
     wlogout
     wlsunset
 
