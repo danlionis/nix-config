@@ -13,7 +13,7 @@
         bitwarden-cli
         btop
         carapace
-        codex
+        unstable.codex
         comma
         dig
         eza
