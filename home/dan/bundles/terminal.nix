@@ -26,6 +26,7 @@
         lazygit
         man-pages
         man-pages-posix
+        watchexec
         navi
         nodejs
         nushell
