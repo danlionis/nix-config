@@ -13,7 +13,6 @@
         bitwarden-cli
         btop
         carapace
-        unstable.codex
         comma
         dig
         eza
@@ -26,23 +25,25 @@
         lazygit
         man-pages
         man-pages-posix
-        watchexec
         navi
+        neovim
         nodejs
         nushell
         prettierd
-        taplo
         ripgrep
         starship
+        taplo
         tldr
         tree-sitter
         unzip
+        watchexec
         wget
         yazi
         yt-dlp
         zip
         zoxide
-        neovim
+
+        unstable.codex
       ];
       linuxPackages = with pkgs; [
         distrobox
