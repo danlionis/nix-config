@@ -20,7 +20,6 @@
     ../../users/dan.nix
     ../../users/backup.nix
 
-    ../../modules/tailscale.nix
     ../../modules/caddy.nix
 
     ../../modules/podman.nix
@@ -80,4 +79,9 @@
   system.stateVersion = "24.11";
 
   nixpkgs.overlays = builtins.attrValues outputs.overlays;
+
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "server";
+  };
 }
