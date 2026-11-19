@@ -105,7 +105,7 @@
   # };
 
   # https://nixos.wiki/wiki/WireGuard#Setting_up_WireGuard_with_NetworkManager
-  # networking.firewall.checkReversePath = "loose";
+  networking.firewall.checkReversePath = "loose";
 
   networking.hosts = {
     "127.0.0.1" = [
@@ -163,6 +163,7 @@
     zotero
 
     # other
+    eduvpn-client
     openssl
     pkg-config
     chezmoi
