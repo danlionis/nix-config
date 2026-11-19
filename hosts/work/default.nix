@@ -32,7 +32,7 @@
     ../../modules/tailscale.nix
     ../../modules/terminal.nix
     ../../modules/wireshark.nix
-    # ../../modules/yubikey.nix
+    ../../modules/yubikey.nix
     # ../../modules/localsend.nix
 
     ./guests/beszel-agent.nix
@@ -303,4 +303,18 @@
 
   hardware.logitech.wireless.enable = true;
   hardware.logitech.wireless.enableGraphical = true;
+
+  services.fwupd.enable = true;
+
+  services.pcscd = {
+    enable = true;
+    plugins = [
+      pkgs.ccid
+      pkgs.pcsc-cyberjack
+    ];
+  };
+
+  services.udev.extraRules = ''
+    SUBSYSTEM=="usb", ATTR{idVendor}=="0c4b", ATTR{idProduct}=="0501", MODE="0660", GROUP="pcscd"
+  '';
 }
