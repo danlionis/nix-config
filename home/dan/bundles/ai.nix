@@ -11,7 +11,7 @@ let
     rwDirs = [ "$HOME/.codex" ];
     rwFiles = [ ];
     # For git identity, uncomment to bind your host gitconfig (see README):
-    # roFiles = [ "$HOME/.config/git/config" ];
+    roFiles = [ "$HOME/.config/git/config" ];
     env = {
       # Pass secrets as shell variable references (e.g. "$TOKEN"), not
       # via builtins.getEnv, so they expand at runtime and stay out of
