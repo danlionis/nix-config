@@ -45,6 +45,11 @@
       url = "github:aashish-thapa/wlctl";
     };
 
+    agent-sandbox = {
+      url = "github:archie-judd/agent-sandbox.nix";
+      inputs.nixpkgs.follows = "nixpkgs-unstable";
+    };
+
     # https://github.com/NixOS/nixpkgs/issues/448779
     # elephant = {
     #   url = "github:abenz1267/elephant/v2.17.1";

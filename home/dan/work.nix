@@ -6,6 +6,7 @@
     ./common.nix
 
     ./bundles/terminal.nix
+    ./bundles/ai.nix
     ./bundles/dev.nix
 
     ./desktop/walker.nix

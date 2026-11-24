@@ -43,7 +43,7 @@
         zip
         zoxide
 
-        unstable.codex
+        bubblewrap
       ];
       linuxPackages = with pkgs; [
         distrobox
