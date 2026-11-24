@@ -23,6 +23,7 @@
 
     ../../users/dan.nix
 
+    ../../modules/bentopdf.nix
     ../../modules/niri.nix
     ../../modules/fonts.nix
     ../../modules/podman.nix
@@ -147,6 +148,7 @@
     # dev
     gcc
     gnumake
+    uv
 
     # (anki.override { buildInputs = [ wrapGAppsHook ]; }) # Or system-wide
     unstable.anki
